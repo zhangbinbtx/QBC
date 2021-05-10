@@ -1,0 +1,12 @@
+MachineIP1: erpc://192.168.3.152:6000
+#MachineIP1: erpc://192.168.31.152:8088
+MachineIP2: erpc://192.168.3.153:6000
+MachineIP3: erpc://192.168.3.154:6000
+MachineIP4: erpc://192.168.3.155:6000
+LocalMachinePort: 7654
+TrackIP: erpc://192.168.3.115:6000  #轨道ip
+LocalTrackPort: 4567
+QxAutoAccumulated: False
+AccessUrl: D:/workspace/QBCTest/QS_ALARM.mdb
+FirbirdUrl: D\:/workspace/QBCTest/QS800.FDB
+

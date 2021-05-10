@@ -1,0 +1,87 @@
+
+Vsquid:S1135"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8¡¹ãŸ/
+W
+squid:S106ê"9Replace this use of System.out or System.err by a logger.(³Õ¾¹8Âê¶É/
+„squid:UselessImportCheck"TRemove this unused import 'com.quaero.qbcTest.base.ErpcModelCallback.IEventDllCall'.(¡›¼şøÿÿÿÿ8Âê¶É/
+qsquid:UselessImportCheck"GRemove this unused import 'java.util.concurrent.ConcurrentLinkedQueue'.(°½Âh8¡¹ãŸ/
+\
+squid:S106é"9Replace this use of System.out or System.err by a logger.(şšì€ıÿÿÿÿ8Âê¶É/
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‡öÙš
+asquid:UselessImportCheck"1Remove this unused import 'java.net.InetAddress'.(ë³ƒÒÿÿÿÿÿ8¡¹ãŸ/
+W
+squid:S106è"9Replace this use of System.out or System.err by a logger.(õŞò8Âê¶É/
+[
+squid:S106g"9Replace this use of System.out or System.err by a logger.(¡• ıÿÿÿÿ8¶ò­Ë/
+Xsquid:S1191)"5Use classes from the Java API instead of Sun classes.(‚îéÙÿÿÿÿÿ8¡¹ãŸ/
+[
+squid:S106r"9Replace this use of System.out or System.err by a logger.(şšì€ıÿÿÿÿ8¶ò­Ë/
+tsquid:S1192r"QDefine a constant instead of duplicating this literal "ååº”æ§½æ¸©åº¦=" 3 times.(şšì€ıÿÿÿÿ8¶ò­Ë/
+hsquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(ñ¥şâúÿÿÿÿ
+\
+squid:S106 "9Replace this use of System.out or System.err by a logger.(ô¿€şÿÿÿÿ8¡¹ãŸ/
+isquid:CommentedOutCodeLine{"<This block of commented-out lines of code should be removed.(°¸…ğ8¡¹ãŸ/
+O
+squid:S106Ô"9Replace this use of System.out or System.err by a logger.(È§Ñu
+Osquid:S1135£"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ
+Fsquid:S2189""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8¡¹ãŸ/
+osquid:S2095K"LUse try-with-resources or close this "DatagramSocket" in a "finally" clause.(ˆ˜ÿıÿÿÿÿ8¶ò­Ë/
+osquid:CommentedOutCodeLineª"<This block of commented-out lines of code should be removed.(»õİ¢şÿÿÿÿ8¡¹ãŸ/
+Esquid:S2189C""Add an end condition to this loop.(˜ïˆÿÿÿÿÿ8¡¹ãŸ/
+Xsquid:S1854"@Remove this useless assignment to local variable "machineState".(È´÷º
+rsquid:S00101“"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(î«ºŒşÿÿÿÿ8¡¹ãŸ/
+nsquid:S00100Ï"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â‰æÍ8¡¹ãŸ/
+U
+squid:S106Ë"9Replace this use of System.out or System.err by a logger.(˜·íıÿÿÿÿ
+V
+squid:S106s"9Replace this use of System.out or System.err by a logger.(îá¼ş8¶ò­Ë/
+[
+squid:S106x"9Replace this use of System.out or System.err by a logger.( ä×Šıÿÿÿÿ8Âê¶É/
+isquid:CommentedOutCodeLineâ"<This block of commented-out lines of code should be removed.(¬Ô¤8Âê¶É/
+\squid:S1197›"8Move the array designator from the variable to the type.(È¤İ”úÿÿÿÿ8¡¹ãŸ/
+[
+squid:S106W"9Replace this use of System.out or System.err by a logger.(±ßÚıÿÿÿÿ8¶ò­Ë/
+_squid:S1226"GIntroduce a new variable instead of reusing the parameter "transState".(šùÙÌ
+W
+squid:S106Ñ"9Replace this use of System.out or System.err by a logger.(ªéÌö8¡¹ãŸ/
+Vsquid:S1135©"2Complete the task associated to this TODO comment.(‹«¾Æıÿÿÿÿ8¡¹ãŸ/
+@squid:S1148•"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Vsquid:S1135õ"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8¡¹ãŸ/
+_squid:S00112×"FDefine and throw a dedicated exception instead of using a generic one.(àüüæ
+[
+squid:S106M"9Replace this use of System.out or System.err by a logger.(Ñõ½ãøÿÿÿÿ8¶ò­Ë/
+V
+squid:S106q"9Replace this use of System.out or System.err by a logger.(õŞò8¶ò­Ë/
+[
+squid:S106]"9Replace this use of System.out or System.err by a logger.(ö¦¿ìùÿÿÿÿ8¶ò­Ë/
+\squid:UselessImportCheck
+"1Remove this unused import 'java.util.Dictionary'.(¸Ûãó8¡¹ãŸ/
+esquid:S00112Ğ"FDefine and throw a dedicated exception instead of using a generic one.(İü>8¡¹ãŸ/
+Fsquid:S1148}"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡¹ãŸ/
+U
+squid:S106z"9Replace this use of System.out or System.err by a logger.(àÀÚv8¡¹ãŸ/
+usquid:S3776B"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¾¸ùÿÿÿÿ8¶ò­Ë/
+Vsquid:S1135û"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8¡¹ãŸ/
+Gsquid:S1148¢"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¡¹ãŸ/
+Vsquid:S1854">Remove this useless assignment to local variable "transState".(šùÙÌ
+\
+squid:S106À"9Replace this use of System.out or System.err by a logger.(˜·íıÿÿÿÿ8¡¹ãŸ/
+Ysquid:S1161‹":Add the "@Override" annotation above this method signature(“–ış8¡¹ãŸ/
+Vsquid:S1135ï"2Complete the task associated to this TODO comment.(» æÿÿÿÿÿ8¡¹ãŸ/
+msquid:S1192²"IDefine a constant instead of duplicating this literal "resflag=" 3 times.(˜·íıÿÿÿÿ8¡¹ãŸ/
+‰"squid:ClassVariableVisibilityCheck3"TMake addCache a static final constant or non-public and provide accessors if needed.(ê¢µÌ8¡¹ãŸ/
+hsquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(Êá¹óùÿÿÿÿ
+asquid:S1226"IIntroduce a new variable instead of reusing the parameter "machineState".(È´÷º
+W
+squid:S106¼"9Replace this use of System.out or System.err by a logger.(Š¤Ïì8¡¹ãŸ/
+W
+squid:S106Ç"9Replace this use of System.out or System.err by a logger.(Š¤Ïì8¡¹ãŸ/
+‚squid:S1149H"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(‰©ƒŞùÿÿÿÿ8¶ò­Ë/
+\
+squid:S106²"9Replace this use of System.out or System.err by a logger.(˜·íıÿÿÿÿ8¡¹ãŸ/
+isquid:CommentedOutCodeLinec"<This block of commented-out lines of code should be removed.(¨»¿Œ8™Æµ/
+V
+squid:S106["9Replace this use of System.out or System.err by a logger.(ÔéÜƒ8™Æµ/
+V
+squid:S106`"9Replace this use of System.out or System.err by a logger.(öÚšÂ8™Æµ/
+Fsquid:S1125j"(Remove the literal "true" boolean value.(®Òš¶8™Æµ/
+Msquid:S00108t")Either remove or fill this block of code.(§÷Æèùÿÿÿÿ8™Æµ/

@@ -1,0 +1,373 @@
+
+fsquid:S00112Û
+"FDefine and throw a dedicated exception instead of using a generic one.(¯õ®Œ8³Ìœ¢/
+\
+squid:S106"9Replace this use of System.out or System.err by a logger.(¢ò»Öûÿÿÿÿ8³Ìœ¢/
+\
+squid:S106‡
+"9Replace this use of System.out or System.err by a logger.(¹œ˜âøÿÿÿÿ8³Ìœ¢/
+isquid:CommentedOutCodeLineï"<This block of commented-out lines of code should be removed.(†ÜôS8³Ìœ¢/
+osquid:CommentedOutCodeLineä"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8³Ìœ¢/
+\
+squid:S106÷"9Replace this use of System.out or System.err by a logger.(›”¨Öúÿÿÿÿ8³Ìœ¢/
+\
+squid:S106Š"9Replace this use of System.out or System.err by a logger.(“à±úÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Ì"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112À"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+W
+squid:S106²"9Replace this use of System.out or System.err by a logger.(’Î¾ 8³Ìœ¢/
+isquid:S1764›"JCorrect one of the identical sub-expressions on both sides of operator "&"(‡·­ë8³Ìœ¢/
+ksquid:S00112ğ"FDefine and throw a dedicated exception instead of using a generic one.(ßï‰üÿÿÿÿ8Íê¶É/
+isquid:CommentedOutCodeLine÷
+"<This block of commented-out lines of code should be removed.(éÔ¹b8Íê¶É/
+ksquid:S00112’"FDefine and throw a dedicated exception instead of using a generic one.(©—õÒÿÿÿÿÿ8Íê¶É/
+fsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112³"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112Ÿ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+W
+squid:S106"9Replace this use of System.out or System.err by a logger.(»‚õŞ8³Ìœ¢/
+ssquid:S00100Ù"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ‹îãıÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLine¥"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+fsquid:S00112İ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106¹"9Replace this use of System.out or System.err by a logger.(¦„‚Ëÿÿÿÿÿ8³Ìœ¢/
+esquid:S00112À"FDefine and throw a dedicated exception instead of using a generic one.(ØÄÀ8Íê¶É/
+fsquid:S00112¢	"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+osquid:CommentedOutCodeLine¿"<This block of commented-out lines of code should be removed.(î”Ü¸úÿÿÿÿ8³Ìœ¢/
+ksquid:S00112‰"FDefine and throw a dedicated exception instead of using a generic one.(ù‡Ò¼şÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLine†"<This block of commented-out lines of code should be removed.(öæŠ“ÿÿÿÿÿ8³Ìœ¢/
+;squid:S1643±"Use a StringBuilder instead.(¿Õ©«8³Ìœ¢/
+ksquid:S00112†
+"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+V
+squid:S106Ö"9Replace this use of System.out or System.err by a logger.(•é¡{8³Ìœ¢/
+fsquid:S00112½	"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106¬"9Replace this use of System.out or System.err by a logger.(—ğê’üÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineŒ"<This block of commented-out lines of code should be removed.(ªÕÇ—üÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(Ô¿ƒÈüÿÿÿÿ8³Ìœ¢/
+ksquid:S00112Ú"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+fsquid:S00112†"FDefine and throw a dedicated exception instead of using a generic one.(ñ¢»¡8Íê¶É/
+squid:S1488"[Immediately return this expression instead of assigning it to the temporary variable "ret".(ß„öñıÿÿÿÿ8³Ìœ¢/
+fsquid:S00112È
+"FDefine and throw a dedicated exception instead of using a generic one.(ËèìŞ8Íê¶É/
+osquid:CommentedOutCodeLineÛ"<This block of commented-out lines of code should be removed.(´Ãüÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineõ"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+fsquid:S00112ˆ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8Íê¶É/
+W
+squid:S106ì"9Replace this use of System.out or System.err by a logger.(¿í‡³8³Ìœ¢/
+\
+squid:S106¬"9Replace this use of System.out or System.err by a logger.(š®Ûòıÿÿÿÿ8³Ìœ¢/
+\
+squid:S106—"9Replace this use of System.out or System.err by a logger.(ğæ€øüÿÿÿÿ8³Ìœ¢/
+\
+squid:S106Š"9Replace this use of System.out or System.err by a logger.(Ù¯Å¶øÿÿÿÿ8³Ìœ¢/
+Ksquid:S1125g"(Remove the literal "true" boolean value.(è¤¿Ñıÿÿÿÿ8³Ìœ¢/
+squid:S1488÷"[Immediately return this expression instead of assigning it to the temporary variable "ret".(ß„öñıÿÿÿÿ8³Ìœ¢/
+fsquid:S00112¤"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112¹"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+W
+squid:S106×"9Replace this use of System.out or System.err by a logger.(Ã¬öÔ8³Ìœ¢/
+\
+squid:S106‹"9Replace this use of System.out or System.err by a logger.(Å¯Ğœÿÿÿÿÿ8³Ìœ¢/
+fsquid:S00112ù"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+¤%squid:RedundantThrowsDeclarationCheckÖ"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(òÄú.8³Ìœ¢/
+\
+squid:S106ö"9Replace this use of System.out or System.err by a logger.(Œ©Ã‡şÿÿÿÿ8³Ìœ¢/
+esquid:S2184Í"ACast one of the operands of this division operation to a "float".(ØßÄÿÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Ç"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+qsquid:S00117Û"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û‘äÈ8³Ìœ¢/
+fsquid:S00112³"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+ª%squid:RedundantThrowsDeclarationCheckõ"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(Ä¿Šüúÿÿÿÿ8³Ìœ¢/
+ksquid:S00112é	"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+ksquid:S00112œ"FDefine and throw a dedicated exception instead of using a generic one.(è—Çïùÿÿÿÿ8³Ìœ¢/
+ksquid:S00112Ü"FDefine and throw a dedicated exception instead of using a generic one.(‘º¿ úÿÿÿÿ8Íê¶É/
+fsquid:S00112·"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112ó"FDefine and throw a dedicated exception instead of using a generic one.(¿÷ÿú8Íê¶É/
+V
+squid:S106†"9Replace this use of System.out or System.err by a logger.(ÌîÙ38³Ìœ¢/
+ksquid:S00112ş"FDefine and throw a dedicated exception instead of using a generic one.(ã’¿¨üÿÿÿÿ8Íê¶É/
+¥%squid:RedundantThrowsDeclarationCheckğ
+"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(êÔåä8³Ìœ¢/
+fsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112Ü"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¿Ô£ïúÿÿÿÿ8³Ìœ¢/
+fsquid:S00112«"FDefine and throw a dedicated exception instead of using a generic one.(‘ØŠ8Íê¶É/
+fsquid:S00112Œ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+Gsquid:S1125b")Remove the literal "false" boolean value.(±À”8³Ìœ¢/
+ksquid:S00112ÿ"FDefine and throw a dedicated exception instead of using a generic one.(‚¶üŞüÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLine²"<This block of commented-out lines of code should be removed.(ÃŸéÇøÿÿÿÿ8³Ìœ¢/
+\
+squid:S106£"9Replace this use of System.out or System.err by a logger.(ÎÉ€™úÿÿÿÿ8³Ìœ¢/
+ksquid:S00112³	"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+squid:S1488İ
+"[Immediately return this expression instead of assigning it to the temporary variable "ret".(ß„öñıÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Ô"FDefine and throw a dedicated exception instead of using a generic one.(ğê®ˆ8Íê¶É/
+fsquid:S00112°"FDefine and throw a dedicated exception instead of using a generic one.(ÿÓ§å8Íê¶É/
+fsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106Õ"9Replace this use of System.out or System.err by a logger.(Çƒ´™øÿÿÿÿ8³Ìœ¢/
+isquid:CommentedOutCodeLineØ"<This block of commented-out lines of code should be removed.(ù—n8Íê¶É/
+ª%squid:RedundantThrowsDeclarationCheckœ"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(è—Çïùÿÿÿÿ8³Ìœ¢/
+jsquid:CommentedOutCodeLineº"<This block of commented-out lines of code should be removed.(«šÅ8Íê¶É/
+W
+squid:S106Ç"9Replace this use of System.out or System.err by a logger.(äçØõ8³Ìœ¢/
+fsquid:S00112Ø	"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112
+"FDefine and throw a dedicated exception instead of using a generic one.(Î„–ê8Íê¶É/
+fsquid:S00112È"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8Íê¶É/
+\
+squid:S106‡"9Replace this use of System.out or System.err by a logger.(ôÔ„™ıÿÿÿÿ8³Ìœ¢/
+fsquid:S00112ì"FDefine and throw a dedicated exception instead of using a generic one.(¤¨üç8Íê¶É/
+fsquid:S00112³
+"FDefine and throw a dedicated exception instead of using a generic one.(ì¾É˜8Íê¶É/
+jsquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(ßıÕ8³Ìœ¢/
+fsquid:S00112¶"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+squid:S1488ò
+"[Immediately return this expression instead of assigning it to the temporary variable "ret".(ß„öñıÿÿÿÿ8³Ìœ¢/
+V
+squid:S106U"9Replace this use of System.out or System.err by a logger.(à¾ÚÅ8³Ìœ¢/
+ksquid:S00112Î	"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+ksquid:S00112¡"FDefine and throw a dedicated exception instead of using a generic one.(ìŠÚ–ûÿÿÿÿ8Íê¶É/
+ssquid:S00100¥"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û¦›ûÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineâ
+"<This block of commented-out lines of code should be removed.(ô¶ÿÿÿÿÿÿ8Íê¶É/
+jsquid:CommentedOutCodeLine»"<This block of commented-out lines of code should be removed.(ÔªÔÅ8Íê¶É/
+W
+squid:S106À"9Replace this use of System.out or System.err by a logger.(ãÀı“8³Ìœ¢/
+osquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+jsquid:S00112C"FDefine and throw a dedicated exception instead of using a generic one.(‹ïÿúÿÿÿÿ8Íê¶É/
+ksquid:S00112˜	"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+ssquid:S00100ÿ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚¶üŞüÿÿÿÿ8³Ìœ¢/
+fsquid:S00112ı"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+ksquid:S00112ë"FDefine and throw a dedicated exception instead of using a generic one.(û†©ãıÿÿÿÿ8Íê¶É/
+fsquid:S00112å"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112ñ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+osquid:CommentedOutCodeLineŞ
+"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8³Ìœ¢/
+fsquid:S00112†"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+osquid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(õõàöÿÿÿÿÿ8³Ìœ¢/
+ksquid:S00112«"FDefine and throw a dedicated exception instead of using a generic one.(ï¨À¼ùÿÿÿÿ8Íê¶É/
+jsquid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(Ö–ÖÊ8³Ìœ¢/
+ksquid:S00112í"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+fsquid:S00112ª"FDefine and throw a dedicated exception instead of using a generic one.(¬ÍÅ–8³Ìœ¢/
+\
+squid:S106€	"9Replace this use of System.out or System.err by a logger.(­¶¤¬ÿÿÿÿÿ8³Ìœ¢/
+W
+squid:S106™	"9Replace this use of System.out or System.err by a logger.(¸ Ï“8³Ìœ¢/
+W
+squid:S106«"9Replace this use of System.out or System.err by a logger.(İÉ‰8³Ìœ¢/
+ksquid:S00112Í"FDefine and throw a dedicated exception instead of using a generic one.(Ô”µğüÿÿÿÿ8Íê¶É/
+jsquid:CommentedOutCodeLine¯"<This block of commented-out lines of code should be removed.(¾’à»8³Ìœ¢/
+W
+squid:S106Î"9Replace this use of System.out or System.err by a logger.(„ª³8³Ìœ¢/
+fsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106à"9Replace this use of System.out or System.err by a logger.(Šõ‚åûÿÿÿÿ8³Ìœ¢/
+”"squid:SwitchLastCaseIsDefaultCheck"YComplete cases by adding the missing enum constants or add a default case to this switch.(ÚŞöúÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineš"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineÙ"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+[
+squid:S106I"9Replace this use of System.out or System.err by a logger.(æ†å¦úÿÿÿÿ8³Ìœ¢/
+ƒsquid:S1488ô"_Immediately return this expression instead of assigning it to the temporary variable "samlist".(Š›à‘ıÿÿÿÿ8³Ìœ¢/
+\
+squid:S106Â"9Replace this use of System.out or System.err by a logger.(Û—¦‹ùÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineø"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8³Ìœ¢/
+Ksquid:S1481~"(Remove this unused "ret" local variable.(ß„öñıÿÿÿÿ8³Ìœ¢/
+\
+squid:S106÷"9Replace this use of System.out or System.err by a logger.(¤¸¤ûÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Õ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+ksquid:S00112¥"FDefine and throw a dedicated exception instead of using a generic one.(Û¦›ûÿÿÿÿ8Íê¶É/
+ksquid:S00112á"FDefine and throw a dedicated exception instead of using a generic one.(ï—†¥øÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+ksquid:S00112Ô"FDefine and throw a dedicated exception instead of using a generic one.(ıûÉ€ıÿÿÿÿ8Íê¶É/
+fsquid:S00112Ï
+"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+W
+squid:S106´
+"9Replace this use of System.out or System.err by a logger.(Œ˜ä8³Ìœ¢/
+qsquid:S3776œ"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ı“—¿8³Ìœ¢/
+fsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112´"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+W
+squid:S106İ"9Replace this use of System.out or System.err by a logger.(¤ì‘8³Ìœ¢/
+osquid:CommentedOutCodeLine‹"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLine¶"<This block of commented-out lines of code should be removed.(ªÕÇ—üÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineÙ"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8³Ìœ¢/
+fsquid:S00112¼
+"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+nsquid:CommentedOutCodeLineD"<This block of commented-out lines of code should be removed.(´Ãüÿÿÿÿ8³Ìœ¢/
+qsquid:S00117Æ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥Óî¢8³Ìœ¢/
+W
+squid:S106â"9Replace this use of System.out or System.err by a logger.(şÏô¨8³Ìœ¢/
+fsquid:S00112Š"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+@squid:S1643µ"Use a StringBuilder instead.(õ¡Öüÿÿÿÿ8³Ìœ¢/
+W
+squid:S106Ä"9Replace this use of System.out or System.err by a logger.(¢ÚŒ8³Ìœ¢/
+dsquid:S2184Í"@Cast one of the operands of this integer division to a "double".(ØßÄÿÿÿÿÿ8³Ìœ¢/
+squid:S1488ã"[Immediately return this expression instead of assigning it to the temporary variable "ret".(ß„öñıÿÿÿÿ8³Ìœ¢/
+W
+squid:S106‚"9Replace this use of System.out or System.err by a logger.(¯½ÂÜ8³Ìœ¢/
+vsquid:S3776Ù"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ÿ‹îãıÿÿÿÿ8Íê¶É/
+ksquid:S00112õ"FDefine and throw a dedicated exception instead of using a generic one.(Ä¿Šüúÿÿÿÿ8³Ìœ¢/
+ksquid:S00112…"FDefine and throw a dedicated exception instead of using a generic one.(šÔú×ùÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLineË"<This block of commented-out lines of code should be removed.(ªÕÇ—üÿÿÿÿ8³Ìœ¢/
+W
+squid:S106ÿ"9Replace this use of System.out or System.err by a logger.(±ñç„8³Ìœ¢/
+\
+squid:S106Õ"9Replace this use of System.out or System.err by a logger.(Ö¹­’ùÿÿÿÿ8³Ìœ¢/
+osquid:CommentedOutCodeLineó
+"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Î"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+jsquid:S00112T"FDefine and throw a dedicated exception instead of using a generic one.(èÿ‘£ÿÿÿÿÿ8Íê¶É/
+fsquid:S00112Ê"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+ksquid:S00112¡"FDefine and throw a dedicated exception instead of using a generic one.(ï„—½ùÿÿÿÿ8Íê¶É/
+fsquid:S00112¥
+"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112å"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112Ô"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106ô"9Replace this use of System.out or System.err by a logger.(Ü˜•Àùÿÿÿÿ8³Ìœ¢/
+\
+squid:S106ñ"9Replace this use of System.out or System.err by a logger.(‹…§¾ûÿÿÿÿ8³Ìœ¢/
+squid:S1488Ø"[Immediately return this expression instead of assigning it to the temporary variable "ret".(ß„öñıÿÿÿÿ8³Ìœ¢/
+Msquid:S1068:"*Remove this unused "getcon" private field.(İºòºûÿÿÿÿ8³Ìœ¢/
+V
+squid:S106_"9Replace this use of System.out or System.err by a logger.(´Ùåó8³Ìœ¢/
+fsquid:S00112¿"FDefine and throw a dedicated exception instead of using a generic one.(—˜»Î8Íê¶É/
+fsquid:S00112Ø"FDefine and throw a dedicated exception instead of using a generic one.(ĞµŠ8³Ìœ¢/
+fsquid:S00112•"FDefine and throw a dedicated exception instead of using a generic one.(İ·—™8Íê¶É/
+;squid:S1643º"Use a StringBuilder instead.(øĞè8³Ìœ¢/
+W
+squid:S106Ï	"9Replace this use of System.out or System.err by a logger.(Ãôê¬8³Ìœ¢/
+\
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ä»¶ûÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Ï"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112ğ
+"FDefine and throw a dedicated exception instead of using a generic one.(êÔåä8³Ìœ¢/
+ksquid:S00112Ã"FDefine and throw a dedicated exception instead of using a generic one.( É®ıÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(¶©Š«ÿÿÿÿÿ8³Ìœ¢/
+fsquid:S00112‡"FDefine and throw a dedicated exception instead of using a generic one.(Ğ¢Ò¡8Íê¶É/
+esquid:S00112Ö"FDefine and throw a dedicated exception instead of using a generic one.(òÄú.8³Ìœ¢/
+Esquid:S1068;"'Remove this unused "evc" private field.(›õı8³Ìœ¢/
+fsquid:S00112”"FDefine and throw a dedicated exception instead of using a generic one.(”ó¶·8Íê¶É/
+\
+squid:S106°"9Replace this use of System.out or System.err by a logger.(¡Ÿüÿÿÿÿ8³Ìœ¢/
+\
+squid:S106–"9Replace this use of System.out or System.err by a logger.(ÅÒÌâıÿÿÿÿ8³Ìœ¢/
+ksquid:S00112ß"FDefine and throw a dedicated exception instead of using a generic one.(Ã¬¬âşÿÿÿÿ8Íê¶É/
+fsquid:S00112Ã"FDefine and throw a dedicated exception instead of using a generic one.(‰–ÇË8Íê¶É/
+ksquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(èİÎÑşÿÿÿÿ8Íê¶É/
+ksquid:S00112Æ"FDefine and throw a dedicated exception instead of using a generic one.(ñÔ±èúÿÿÿÿ8Íê¶É/
+Lsquid:S1125ß"(Remove the literal "true" boolean value.(Î—ŞÉúÿÿÿÿ8³Ìœ¢/
+W
+squid:S106±"9Replace this use of System.out or System.err by a logger.(×ÏÑ¡8³Ìœ¢/
+nsquid:S00100Å"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¥Æö8Íê¶É/
+ksquid:S00112ÿ"FDefine and throw a dedicated exception instead of using a generic one.(¼Ëàæüÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLineÀ"<This block of commented-out lines of code should be removed.(ïÕ£ıÿÿÿÿ8³Ìœ¢/
+W
+squid:S106€"9Replace this use of System.out or System.err by a logger.(…·ìê8³Ìœ¢/
+ksquid:S00112œ"FDefine and throw a dedicated exception instead of using a generic one.(áßªùÿÿÿÿ8Íê¶É/
+¥%squid:RedundantThrowsDeclarationCheckÛ
+"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(¯õ®Œ8³Ìœ¢/
+fsquid:S00112‰"FDefine and throw a dedicated exception instead of using a generic one.(Á£Ï8Íê¶É/
+\
+squid:S106ˆ"9Replace this use of System.out or System.err by a logger.(äªÔŸøÿÿÿÿ8³Ìœ¢/
+fsquid:S00112ó"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112õ	"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112’
+"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106°"9Replace this use of System.out or System.err by a logger.(ØîÙ¿ùÿÿÿÿ8³Ìœ¢/
+fsquid:S00112›"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112ü"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+bsquid:S1155×">Use isEmpty() to check whether the collection is empty or not.(µª‘ğıÿÿÿÿ8³Ìœ¢/
+[squid:S1854¤"7Remove this useless assignment to local variable "ret".(èÇÛÎıÿÿÿÿ8³Ìœ¢/
+\
+squid:S106¢"9Replace this use of System.out or System.err by a logger.(°ø¾˜úÿÿÿÿ8³Ìœ¢/
+fsquid:S00112ˆ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+jsquid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(Ã³ˆ÷8³Ìœ¢/
+Ysquid:S1854‚":Remove this useless assignment to local variable "dataIn".(ÅĞ–È8³Ìœ¢/
+esquid:S00112n"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+\
+squid:S106Á"9Replace this use of System.out or System.err by a logger.(³ÿ¬Ñşÿÿÿÿ8³Ìœ¢/
+W
+squid:S106"9Replace this use of System.out or System.err by a logger.(¥Ú£Ö8³Ìœ¢/
+W
+squid:S106´	"9Replace this use of System.out or System.err by a logger.(Ãôê¬8³Ìœ¢/
+ssquid:S00100’"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©—õÒÿÿÿÿÿ8³Ìœ¢/
+ksquid:S00112ê"FDefine and throw a dedicated exception instead of using a generic one.(µöüºıÿÿÿÿ8³Ìœ¢/
+\
+squid:S106Ÿ
+"9Replace this use of System.out or System.err by a logger.(¿óç²ùÿÿÿÿ8³Ìœ¢/
+fsquid:S00112Æ"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112™"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+osquid:CommentedOutCodeLineŸ"<This block of commented-out lines of code should be removed.(ñ¥ùšøÿÿÿÿ8³Ìœ¢/
+ksquid:S00112–"FDefine and throw a dedicated exception instead of using a generic one.(ƒ«ùûÿÿÿÿ8Íê¶É/
+fsquid:S00112Õ"FDefine and throw a dedicated exception instead of using a generic one.(¥‹ñˆ8Íê¶É/
+W
+squid:S106Ü
+"9Replace this use of System.out or System.err by a logger.(à•üÃ8³Ìœ¢/
+W
+squid:S106í"9Replace this use of System.out or System.err by a logger.(ı•¯8³Ìœ¢/
+osquid:CommentedOutCodeLine­"<This block of commented-out lines of code should be removed.(ºÓ ³ùÿÿÿÿ8Íê¶É/
+jsquid:CommentedOutCodeLine¨"<This block of commented-out lines of code should be removed.(·¬Šò8³Ìœ¢/
+fsquid:S00112¯"FDefine and throw a dedicated exception instead of using a generic one.(’ùëÀ8Íê¶É/
+fsquid:S00112“"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+W
+squid:S106»"9Replace this use of System.out or System.err by a logger.(½±ë“8³Ìœ¢/
+W
+squid:S106É
+"9Replace this use of System.out or System.err by a logger.(ÅÎôê8³Ìœ¢/
+fsquid:S00112œ"FDefine and throw a dedicated exception instead of using a generic one.(ı“—¿8Íê¶É/
+V
+squid:S106}"9Replace this use of System.out or System.err by a logger.(´¤å8³Ìœ¢/
+\
+squid:S106™"9Replace this use of System.out or System.err by a logger.(è‘©äşÿÿÿÿ8³Ìœ¢/
+\
+squid:S106ñ
+"9Replace this use of System.out or System.err by a logger.(Ñ“˜Şÿÿÿÿÿ8³Ìœ¢/
+fsquid:S00112‡	"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8Íê¶É/
+esquid:S2118İ"AMake the "java.util.List" class "Serializable" or don't write it.(¬…úÅøÿÿÿÿ8³Ìœ¢/
+\
+squid:S106•"9Replace this use of System.out or System.err by a logger.(£âÜ°ıÿÿÿÿ8³Ìœ¢/
+fsquid:S00112¨"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112±"FDefine and throw a dedicated exception instead of using a generic one.(üº›€8Íê¶É/
+qsquid:S00117Å"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¥Æö8Íê¶É/
+msquid:S00100À"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÄÀ8³Ìœ¢/
+osquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(ªÕÇ—üÿÿÿÿ8³Ìœ¢/
+isquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(¿à¡8Íê¶É/
+ksquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(áçÃşÿÿÿÿ8Íê¶É/
+nsquid:S00100Ô"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğê®ˆ8³Ìœ¢/
+fsquid:S00112­"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+fsquid:S00112ö"FDefine and throw a dedicated exception instead of using a generic one.(Âº8Íê¶É/
+V
+squid:S106ê	"9Replace this use of System.out or System.err by a logger.(—˜€&8³Ìœ¢/
+W
+squid:S106¦"9Replace this use of System.out or System.err by a logger.(½±ë“8³Ìœ¢/
+\
+squid:S106Ä"9Replace this use of System.out or System.err by a logger.(ïÉøşÿÿÿÿ8³Ìœ¢/
+\
+squid:S106“"9Replace this use of System.out or System.err by a logger.(°ùÀ°üÿÿÿÿ8³Ìœ¢/
+W
+squid:S106ë"9Replace this use of System.out or System.err by a logger.(‡Ñ†8³Ìœ¢/
+ksquid:S00112˜"FDefine and throw a dedicated exception instead of using a generic one.(¥âÙûÿÿÿÿ8Íê¶É/
+Rsquid:UselessParenthesesCheckâ"!Remove these useless parentheses.(ŠˆÿŠ8³Ìœ¢/
+fsquid:S00112ê"FDefine and throw a dedicated exception instead of using a generic one.(£Ñ—Ô8³Ìœ¢/
+ksquid:S00112Á"FDefine and throw a dedicated exception instead of using a generic one.(›Á¤ûùÿÿÿÿ8Íê¶É/
+\
+squid:S106î"9Replace this use of System.out or System.err by a logger.(ÂÈƒøÿÿÿÿ8³Ìœ¢/
+ª%squid:RedundantThrowsDeclarationCheck¡"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ï„—½ùÿÿÿÿ8Íê¶É/
+ª%squid:RedundantThrowsDeclarationChecká"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ï—†¥øÿÿÿÿ8³Ìœ¢/
+ksquid:S00112Š"FDefine and throw a dedicated exception instead of using a generic one.(Ôµ¹ƒúÿÿÿÿ8Íê¶É/
+osquid:CommentedOutCodeLineõ"<This block of commented-out lines of code should be removed.(ºÈœùÿÿÿÿ8±Æµ/
+osquid:CommentedOutCodeLine¾"<This block of commented-out lines of code should be removed.(›”®®ÿÿÿÿÿ8±Æµ/
+osquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(‡§Œ¢ùÿÿÿÿ8±Æµ/
+osquid:CommentedOutCodeLineû"<This block of commented-out lines of code should be removed.(şÑÿıÿÿÿÿ8±Æµ/
+osquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(á¼Ê³ıÿÿÿÿ8±Æµ/
+Hsquid:S1125…")Remove the literal "false" boolean value.(±À”8±Æµ/
+Lsquid:S1481"(Remove this unused "ret" local variable.(ß„öñıÿÿÿÿ8±Æµ/
+jsquid:S00112|"FDefine and throw a dedicated exception instead of using a generic one.(¯ññ£ıÿÿÿÿ8±Æµ/
+`squid:S1854F"=Remove this useless assignment to local variable "initstate".(Ùó˜ƒúÿÿÿÿ8±Æµ/
+[squid:S1854‚"7Remove this useless assignment to local variable "ret".(äùœØûÿÿÿÿ8±Æµ/
