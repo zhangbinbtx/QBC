@@ -58,7 +58,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@PostMapping("/boxValueIn/{turn}")
-	public boolean boxValueIn(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO boxValueIn(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入BoxValueIn");
 		boolean ret = false;
 		try {
@@ -70,7 +70,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 水槽进水电磁阀开关
@@ -79,7 +79,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@PostMapping("/slotValueIn/{turn}")
-	public boolean slotValueIn(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO slotValueIn(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SlotValueIn");
 		boolean ret = false;
 		try {
@@ -91,7 +91,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 水槽排水电磁阀开关
@@ -100,7 +100,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@PostMapping("/slotValueOut/{turn}")
-	public boolean slotValueOut(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO slotValueOut(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SlotValueOut");
 		boolean ret = false;
 		try {
@@ -112,7 +112,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 水箱循环泵开关
@@ -121,7 +121,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/boxCyclePump/{turn}")
-	public boolean boxCyclePump(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO boxCyclePump(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入boxCyclePump");
 		boolean ret = false;
 		try {
@@ -133,7 +133,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 水槽循环泵开关
@@ -142,7 +142,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/slotCyclePump/{turn}")
-	public boolean slotCyclePump(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO slotCyclePump(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SlotCyclePump");
 		boolean ret = false;
 		try {
@@ -154,16 +154,16 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
-	 * 水槽循环泵开关
+	 * 真空泵开关
 	 * turn 0x01	0x01-开； 0x00-关
 	 * @return
 	 * @throws Exception
 	 */
 	@GetMapping("/vacuumPump/{turn}")
-	public boolean vacuumPump(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO vacuumPump(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入VacuumPump");
 		boolean ret = false;
 		try {
@@ -175,7 +175,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 齿轮泵开关
@@ -184,7 +184,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/gearPump/{turn}")
-	public boolean gearPump(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO gearPump(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入GearPump");
 		boolean ret = false;
 		try {
@@ -196,7 +196,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 卤素灯开关
@@ -205,7 +205,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/halogenLamps/{turn}")
-	public boolean halogenLamps(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO halogenLamps(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入HalogenLamps");
 		boolean ret = false;
 		try {
@@ -217,7 +217,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
@@ -227,7 +227,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/boxHeating/{turn}")
-	public boolean boxHeating(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO boxHeating(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入BoxHeating");
 		boolean ret = false;
 		try {
@@ -239,7 +239,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 水槽加热棒
@@ -248,7 +248,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/slotHeating/{turn}")
-	public boolean slotHeating(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO slotHeating(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SlotHeating");
 		boolean ret = false;
 		try {
@@ -260,7 +260,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 读取水槽温度系数
@@ -282,21 +282,21 @@ public class AcBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					int j=0;
+					for(int i=0;i<2;i++){
+						byte[] newstate=new byte[4];
+						j=i*4;
+						System.arraycopy(state, j, newstate, 0, 4);
+						float ste=ByteUtil.getFloat(newstate);
+						//int ste=(int)((newstate[0])|(newstate[1])<<8);
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取水槽温度系数超时！");
 				}
 				js++;
 				Thread.sleep(1500);
-			}
-			byte[] newstate=new byte[4];
-			int j=0;
-			for(int i=0;i<2;i++){
-				j=i*4;
-				System.arraycopy(state, j, newstate, 0, 4);
-				float ste=ByteUtil.getFloat(newstate);
-				//int ste=(int)((newstate[0])|(newstate[1])<<8);
-				newVal.add(ste);
 			}
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -351,12 +351,12 @@ public class AcBoardController extends baseController{
 	/**
 	 * 设置水槽温度系数
 	 * temp 水槽温度系数K值
-	 * temp 水槽温度系数B值
+	 * temp1 水槽温度系数B值
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/setSlotTemp")
-	public boolean setSlotTemp(@PathVariable("temp") float temp,@PathVariable("temp1") float temp1) throws Exception {
+	@GetMapping("/setSlotTemp/{temp}/{temp1}")
+	public ResponseVO setSlotTemp(@PathVariable("temp") float temp,@PathVariable("temp1") float temp1) throws Exception {
 		System.out.println("进入SetSlotTemp");
 		boolean ret = false;
 		try {
@@ -375,7 +375,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 读取水箱温度系数
@@ -397,6 +397,15 @@ public class AcBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					int j=0;
+					for(int i=0;i<2;i++){
+						byte[] newstate=new byte[4];
+						j=i*4;
+						System.arraycopy(state, j, newstate, 0, 4);
+						float ste=ByteUtil.getFloat(newstate);
+						//int ste=(int)((newstate[0])|(newstate[1])<<8);
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取水箱温度系数超时！");
@@ -404,15 +413,7 @@ public class AcBoardController extends baseController{
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[4];
-			int j=0;
-			for(int i=0;i<2;i++){
-				j=i*4;
-				System.arraycopy(state, j, newstate, 0, 4);
-				float ste=ByteUtil.getFloat(newstate);
-				//int ste=(int)((newstate[0])|(newstate[1])<<8);
-				newVal.add(ste);
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -421,12 +422,12 @@ public class AcBoardController extends baseController{
 	/**
 	 * 设置水箱温度系数
 	 * temp 水槽温度系数K值
-	 * temp 水槽温度系数B值
+	 * temp1 水槽温度系数B值
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/setBoxTemp")
-	public boolean setBoxTemp(@PathVariable("temp") float temp,@PathVariable("temp1") float temp1) throws Exception {
+	@GetMapping("/setBoxTemp/{temp}/{temp1}")
+	public ResponseVO setBoxTemp(@PathVariable("temp") float temp,@PathVariable("temp1") float temp1) throws Exception {
 		System.out.println("进入SetBoxTemp");
 		boolean ret = false;
 		try {
@@ -445,7 +446,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *读取交流状态
@@ -467,6 +468,25 @@ public class AcBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					int j=0;
+					for(int i=0;i<19;i++){
+						byte[] newstate=new byte[4];
+						Object ste=0;
+						if(i<17){
+							ste=(int)(state[i]);
+							System.out.println("ste"+i+"="+ste);
+						}else if(i==17){
+							System.arraycopy(state, i, newstate, 0, 4);
+							ste=ByteUtil.getFloat(newstate);
+							System.out.println("ste1="+ste);
+						}else if(i==18){
+							j=i+3;
+							System.arraycopy(state, j, newstate, 0, 4);
+							ste=ByteUtil.getFloat(newstate);
+							System.out.println("ste2="+ste);
+						}
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取交流状态超时！");
@@ -474,25 +494,7 @@ public class AcBoardController extends baseController{
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[4];
-			int j=0;
-			for(int i=0;i<19;i++){
-				Object ste=0;
-				if(i<17){
-					ste=(int)(state[i]);
-					System.out.println("ste"+i+"="+ste);
-				}else if(i==17){
-					System.arraycopy(state, i, newstate, 0, 4);
-					ste=ByteUtil.getFloat(newstate);
-					System.out.println("ste1="+ste);
-				}else if(i==18){
-					j=i+3;
-					System.arraycopy(state, j, newstate, 0, 4);
-					ste=ByteUtil.getFloat(newstate);
-					System.out.println("ste2="+ste);
-				}
-				newVal.add(ste);
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -504,7 +506,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/acReset")
-	public boolean acReset() throws Exception {
+	public ResponseVO acReset() throws Exception {
 		System.out.println("进入ACReset");
 		boolean ret = false;
 		try {
@@ -515,7 +517,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *交流停止
@@ -523,7 +525,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/acStop")
-	public boolean acStop() throws Exception {
+	public ResponseVO acStop() throws Exception {
 		System.out.println("进入ACStop");
 		boolean ret = false;
 		try {
@@ -534,7 +536,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *交流待机
@@ -542,7 +544,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/acCStandBy")
-	public boolean acStandBy() throws Exception {
+	public ResponseVO acStandBy() throws Exception {
 		System.out.println("进入ACStandBy");
 		boolean ret = false;
 		try {
@@ -553,7 +555,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
@@ -562,7 +564,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/slotWaterOut")
-	public boolean slotWaterOut() throws Exception {
+	public ResponseVO slotWaterOut() throws Exception {
 		System.out.println("进入SlotWaterOut");
 		boolean ret = false;
 		try {
@@ -573,7 +575,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *水槽上水
@@ -581,7 +583,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/slotWaterIn")
-	public boolean slotWaterIn() throws Exception {
+	public ResponseVO slotWaterIn() throws Exception {
 		System.out.println("进入SlotWaterIn");
 		boolean ret = false;
 		try {
@@ -592,7 +594,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *读取交流数据
@@ -614,28 +616,28 @@ public class AcBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					int j=0;
+					for(int i=0;i<6;i++){
+						byte[] newstate=new byte[4];
+						Object ste=0;
+						if(i==0||i==2||i==4){
+							j=i*3;
+							System.arraycopy(state, j, newstate, 0, 2);
+							ste=ByteUtil.getInt(newstate);
+						}else if(i==1||i==3||i==5){
+							j=i*3-1;
+							System.arraycopy(state, j, newstate, 0, 4);
+							ste=ByteUtil.getFloat(newstate);
+						}
+						System.out.println("ste="+ste);
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取交流数据超时！");
 				}
 				js++;
 				Thread.sleep(1500);
-			}
-			int j=0;
-			for(int i=0;i<6;i++){
-				byte[] newstate=new byte[4];
-				Object ste=0;
-				if(i==0||i==2||i==4){
-					j=i*3;
-					System.arraycopy(state, j, newstate, 0, 2);
-					ste=ByteUtil.getInt(newstate);
-				}else if(i==1||i==3||i==5){
-					j=i*3-1;
-					System.arraycopy(state, j, newstate, 0, 4);
-					ste=ByteUtil.getFloat(newstate);
-				}
-				System.out.println("ste="+ste);
-				newVal.add(ste);
 			}
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -648,7 +650,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/waterMode")
-	public boolean waterMode() throws Exception {
+	public ResponseVO waterMode() throws Exception {
 		System.out.println("进入WaterMode");
 		boolean ret = false;
 		try {
@@ -659,7 +661,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *无水模式
@@ -667,7 +669,7 @@ public class AcBoardController extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/anhydrousMode")
-	public boolean anhydrousMode() throws Exception {
+	public ResponseVO anhydrousMode() throws Exception {
 		System.out.println("进入AnhydrousMode");
 		boolean ret = false;
 		try {
@@ -678,17 +680,17 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
 	 * 孵育槽阈值设置(无)
-	 * turn 0x02	0-999
+	 * turn 0x02	阈值0-999
 	 * @return
 	 * @throws Exception
 	 */
 	@GetMapping("/thresholdWrite/{turn}")
-	public boolean thresholdWrite(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO thresholdWrite(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入ThresholdWrite");
 		boolean ret = false;
 		try {
@@ -701,7 +703,7 @@ public class AcBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *孵育槽阈值读取(无)
@@ -723,6 +725,9 @@ public class AcBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					byte[] newstate=new byte[4];
+					System.arraycopy(state, 0, newstate, 0, 4);
+					ste=ByteUtil.getInt(newstate);
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"孵育槽阈值读取超时！");
@@ -730,9 +735,7 @@ public class AcBoardController extends baseController{
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[4];
-			System.arraycopy(state, 0, newstate, 0, 4);
-			ste=ByteUtil.getInt(newstate);
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -759,6 +762,9 @@ public class AcBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					byte[] newstate=new byte[4];
+					System.arraycopy(state, 0, newstate, 0, 4);
+					ste=ByteUtil.getInt(newstate);
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"孵育槽系数读取超时！");
@@ -766,9 +772,6 @@ public class AcBoardController extends baseController{
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[4];
-			System.arraycopy(state, 0, newstate, 0, 4);
-			ste=ByteUtil.getInt(newstate);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}

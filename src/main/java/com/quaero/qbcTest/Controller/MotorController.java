@@ -20,6 +20,7 @@ import com.quaero.qbcTest.dto.MessageCode.CodeEnum;
 import com.quaero.qbcTest.dto.MessageCode.ResponseVO;
 import com.quaero.qbcTest.dto.entity.ElectricMachineryMove;
 import com.quaero.qbcTest.dto.entity.FlashStruct;
+import com.quaero.qbcTest.dto.entity.MacroDefinitionStruct;
 import com.quaero.qbcTest.server.QbcTestApi;
 import com.quaero.qbcTest.util.Best;
 import com.quaero.qbcTest.util.ByteUtil;
@@ -65,6 +66,22 @@ public class MotorController extends baseController {
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					for(int i=0;i<4;i++){
+						byte[] newstate=new byte[4];
+						Object ste=0;
+						if(i<2){
+							ste=state[i];
+						}else if(i==2){
+							int j=i;
+							System.arraycopy(state, j, newstate, 0, 4);
+							ste=ByteUtil.getFloat(newstate);
+						}else if(i==3){
+							int j=i*2;
+							System.arraycopy(state, j, newstate, 0, 4);
+							ste=ByteUtil.getFloat(newstate);
+						}
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"获取电机状态超时！");
@@ -72,22 +89,7 @@ public class MotorController extends baseController {
 				js++;
 				Thread.sleep(1500);
 			}
-			for(int i=0;i<4;i++){
-				byte[] newstate=new byte[4];
-				Object ste=0;
-				if(i<2){
-					ste=state[i];
-				}else if(i==2){
-					int j=i;
-					System.arraycopy(state, j, newstate, 0, 4);
-					ste=ByteUtil.getFloat(newstate);
-				}else if(i==3){
-					int j=i*2;
-					System.arraycopy(state, j, newstate, 0, 4);
-					ste=ByteUtil.getFloat(newstate);
-				}
-				newVal.add(ste);
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -122,6 +124,7 @@ public class MotorController extends baseController {
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					ste=state[0]==1?"执行完成":"执行失败";
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"控制电机超时！");
@@ -129,7 +132,7 @@ public class MotorController extends baseController {
 				js++;
 				Thread.sleep(1500);
 			}
-			ste=state[0]==1?"执行完成":"执行失败";
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -138,7 +141,7 @@ public class MotorController extends baseController {
 	
 	/**
 	 *读取Flash电机参数
-	 * moudleId 模块 0反应板 1搅拌板 2样本板 
+	 * moudleId 模块 0反应板 1搅拌板 2样本板 3
      * motorId 电机ID
      *   反应板(反应盘电机(0x01)、清洗机构1电机(0x02)、清洗机构2电机(0x03)、碱性清洗液注射泵电机(0x04)、酸性清洗液注射泵电机(0x05))	
      *   搅拌板(搅拌1摆动电机(0x01)\搅拌1升降电机(0x02)\搅拌2摆动电机(0x03)\搅拌2升降电机(0x04))		
@@ -166,6 +169,18 @@ public class MotorController extends baseController {
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					for(int i=0;i<5;i++){
+						byte[] newstate=new byte[4];
+						Object ste=0;
+						if(i==0){
+							ste=state[i];
+						}else {
+							int j=i*2-1;
+							System.arraycopy(state, j, newstate, 0, 2);
+							ste=ByteUtil.getInt(newstate);
+						}
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取Flash电机参数超时！");
@@ -173,18 +188,7 @@ public class MotorController extends baseController {
 				js++;
 				Thread.sleep(1500);
 			}
-			for(int i=0;i<5;i++){
-				byte[] newstate=new byte[4];
-				Object ste=0;
-				if(i==0){
-					ste=state[i];
-				}else {
-					int j=i*2-1;
-					System.arraycopy(state, j, newstate, 0, 2);
-					ste=ByteUtil.getInt(newstate);
-				}
-				newVal.add(ste);
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -204,14 +208,18 @@ public class MotorController extends baseController {
 		List newVal=new ArrayList<>();
 		Object ste=0;
 		try {
-			byte[] dataIn = new byte[6];
+			byte[] dataIn = null;
+			if(turn.getBoardID()==2&&turn.getMachineryID()==2){
+				dataIn =new byte[8];
+			}else{
+				dataIn =new byte[4];
+			}
 			dataIn[0] = (byte) (turn.getMachineryID() & 0xff);
 			dataIn[1] = (byte) (turn.getFlashParameter()[0] & 0xff);
 			dataIn[2] = (byte) ((turn.getFlashParameter()[0]>>8) & 0xff);
 			dataIn[3] = (byte) (turn.getFlashParameter()[1] & 0xff);
 			dataIn[4] = (byte) ((turn.getFlashParameter()[1]>>8) & 0xff);
 			dataIn[5] = (byte) (turn.getFlashParameter()[2] & 0xff);
-			dataIn[6] = (byte) ((turn.getFlashParameter()[2]>>8) & 0xff);
 			dataIn[7] = (byte) (turn.getFlashParameter()[3] & 0xff);
 			dataIn[8] = (byte) ((turn.getFlashParameter()[3]>>8) & 0xff);
 			dataIn[9] = (byte) (turn.getFlashParameter()[4] & 0xff);
@@ -224,6 +232,8 @@ public class MotorController extends baseController {
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					//ste=state[0];
+					ste=state[0]==1?"执行完成":"执行失败";
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"控制电机超时！");
@@ -231,11 +241,125 @@ public class MotorController extends baseController {
 				js++;
 				Thread.sleep(1500);
 			}
-			ste=state[0];
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
 		return new ResponseVO(ste);
+	}
+	
+	/**
+	 *模块电机参数读取
+	 * moudleId 模块 0反应板 1搅拌板 2样本板 3
+     * motorId 电机ID
+     *   反应板(反应盘电机(0x01)、清洗机构1电机(0x02)、清洗机构2电机(0x03)、碱性清洗液注射泵电机(0x04)、酸性清洗液注射泵电机(0x05))	
+     *   搅拌板(搅拌1摆动电机(0x01)\搅拌1升降电机(0x02)\搅拌2摆动电机(0x03)\搅拌2升降电机(0x04))		
+     *   样本板(本针摆动电机(0x1)、样本针升降电机(0x02)、质控盘电机(0x03)、样本注射泵电机(0x04))	
+     *   试剂板R1(R1试剂针摆动电机(0x01)、R1试剂针升降电机(0x02)、R1试剂盘电机(0x03)、R1注射泵电机(0x04))
+     *   试剂板R2(R2试剂针摆动电机(0x01)、R2试剂针升降电机(0x02)、R2试剂盘电机(0x03)、R2注射泵电机(0x04))	
+	 * @return
+	 * 电机编号、最大速度（1500-30000）、最小速度（1500-30000）、加速步数（50-700）、减速步数（50-700）
+	 * @throws Exception
+	 */
+	@GetMapping("/macroDefinitionRead/{moudleId}/{motorId}")
+	public ResponseVO macroDefinitionRead(@PathVariable("moudleId") int moudleId,@PathVariable("moudleId") int motorId) throws Exception {
+		System.out.println("进入MacroDefinitionRead");
+		boolean ret = false;
+		byte[] state=null;
+		List newVal=new ArrayList<>();
+		try {
+			byte[] dataIn = new byte[4];
+			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
+			setBoardID(moudleId,head);
+			head.setCommand((int)DeviceDebugCommandElectricMachineryMacroDefinition.MacroDefinitionRead.getId());
+			ret=sendReaction(dataIn,head);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					int indez=0;
+					if(moudleId==0){//反应板
+						indez=2;
+					}else if(moudleId==1){//搅拌板
+						indez=4;
+					}else{
+						indez=8;
+					}
+					if(indez>0){
+					for(int i=0;i<indez;i++){
+						byte[] newstate=new byte[4];
+						Object ste=0;
+						int j=i*4;
+						System.arraycopy(state, j, newstate, 0, 4);
+						ste=ByteUtil.getFloat(newstate);
+						newVal.add(ste);
+					}
+					}
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"模块电机参数读取超时！");
+				}
+				js++;
+				Thread.sleep(1500);
+			}
+			
+		} catch (Exception e) {
+			throw new Exception(getErrorstr(e));
+		}
+		return new ResponseVO(newVal);
+	}
+	/**
+	 *模块电机参数写入
+	 * moudleId 模块 0反应板 1搅拌板 2样本板 3
+	 * @return
+	 * 
+	 * @throws Exception
+	 */
+	@GetMapping("/macroDefinitionWrite")
+	public ResponseVO macroDefinitionWrite(@RequestBody MacroDefinitionStruct turn) throws Exception {
+		System.out.println("进入MacroDefinitionWrite");
+		boolean ret = false;
+		byte[] state=null;
+		List newVal=new ArrayList<>();
+		try {
+			byte[] dataIn = new byte[32];
+			int indexId=0;
+			for(int i=0;i<8;i++){
+				dataIn[indexId++] = (byte) (Float.floatToIntBits(turn.getMacroDefinitions()[i]) & 0xff);
+				dataIn[indexId++] = (byte) ((Float.floatToIntBits(turn.getMacroDefinitions()[i])>>8) & 0xff);
+				dataIn[indexId++] = (byte) ((Float.floatToIntBits(turn.getMacroDefinitions()[i])>>16) & 0xff);
+				dataIn[indexId++] = (byte) ((Float.floatToIntBits(turn.getMacroDefinitions()[i])>>24) & 0xff);
+			}
+			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
+			setBoardID(turn.getMoudleId(),head);
+			head.setCommand((int)DeviceDebugCommandElectricMachineryMacroDefinition.MacroDefinitionWrite.getId());
+			ret=sendReaction(dataIn,head);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"模块电机参数读取超时！");
+				}
+				js++;
+				Thread.sleep(1500);
+			}
+			
+		} catch (Exception e) {
+			throw new Exception(getErrorstr(e));
+		}
+		return new ResponseVO(newVal);
+	}
+	
+	public static void main(String[] args) {
+		//byte[] state={0, 0, 97, 68, 0, 0, 47, 68, 0, 0, -106, 67, 0, 0, 97, 68, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+		byte[] state={0, 0, 0, 64, 0, 0, -96, 64, 0, 0, 64, 64, 0, -128, 9, 68, 0, 0, -56, 66, 0, 0, 122, 67, 0, 0, 0, 0, -102, -103, -103, 62};
+		byte[] newstate = new byte[4];
+		System.arraycopy(state, 28, newstate, 0, 4);
+		//int ste=ByteUtil.getInt(newstate);
+		float ste=ByteUtil.getFloat(newstate);
+		System.out.println(ste);
 	}
 	public void setBoardID(int moudleId,DeviceDebugPackageHead head){
 		if(moudleId==0){

@@ -9,7 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.quaero.qbcTest.Enum.DeviceBoardID;
@@ -19,6 +21,7 @@ import com.quaero.qbcTest.Enum.DeviceDebugCommandAD;
 import com.quaero.qbcTest.dto.DeviceDebugPackageHead;
 import com.quaero.qbcTest.dto.MessageCode.CodeEnum;
 import com.quaero.qbcTest.dto.MessageCode.ResponseVO;
+import com.quaero.qbcTest.dto.entity.DeviceDebugADPara_Tongcai_Setting;
 import com.quaero.qbcTest.server.QbcTestApi;
 import com.quaero.qbcTest.util.Best;
 import com.quaero.qbcTest.util.ByteUtil;
@@ -79,20 +82,20 @@ public class ADBoardController extends baseController{
 			while(true){
 				state=api.getAdStatus(head.getBoardID(),head);
 				if(state!=null){
+					for(int i=0;i<16;i++){
+						byte[] newstate=new byte[4];
+						int j=i*2;
+						System.arraycopy(state, j, newstate, 0, 2);
+						//long ste=(long)((newstate[0])|(newstate[1])<<8|(newstate[2])<<16|(newstate[3])<<24);
+						long ste=ByteUtil.getInt(newstate);
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>100){
 					return new ResponseVO(CodeEnum.FAILED,"读取AD数据超时！");
 				}
 				js++;
 				Thread.sleep(1500);
-			}
-			byte[] newstate=new byte[4];
-			for(int i=0;i<16;i++){
-				int j=i*2;
-				System.arraycopy(state, j, newstate, 0, 2);
-				//long ste=(long)((newstate[0])|(newstate[1])<<8|(newstate[2])<<16|(newstate[3])<<24);
-				long ste=ByteUtil.getInt(newstate);
-				newVal.add(ste);
 			}
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -135,8 +138,8 @@ public class ADBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/WriteADDeviceFactor/{turn}")
-	public boolean writeADDeviceFactor(@PathVariable("turn") byte[] turn) throws Exception {
+	@GetMapping("/WriteADDeviceFactor")
+	public boolean writeADDeviceFactor(@RequestBody byte[] turn) throws Exception {
 		System.out.println("进入WriteADDeviceFactor");
 		boolean ret = false;
 		try {
@@ -155,7 +158,7 @@ public class ADBoardController extends baseController{
 		return ret;
 	}
 	/**
-	 * 读取机器AD系数（未完成）
+	 * 读取机器AD系数（无）
 	 * @return
 	 * @throws Exception
 	 */
@@ -175,6 +178,14 @@ public class ADBoardController extends baseController{
 			while(true){
 				state=api.getAdStatus(head.getBoardID(),head);
 				if(state!=null){
+					for(int i=0;i<16;i++){
+						byte[] newstate=new byte[4];
+						int j=i*2;
+						System.arraycopy(state, j, newstate, 0, 2);
+						//int ste=(int)((newstate[0])|(newstate[1])<<8);
+						long ste=ByteUtil.getInt(newstate);
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取机器AD系数超时！");
@@ -182,14 +193,7 @@ public class ADBoardController extends baseController{
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[4];
-			for(int i=0;i<16;i++){
-				int j=i*2;
-				System.arraycopy(state, j, newstate, 0, 2);
-				//int ste=(int)((newstate[0])|(newstate[1])<<8);
-				long ste=ByteUtil.getInt(newstate);
-				newVal.add(ste);
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -228,8 +232,8 @@ public class ADBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@PostMapping("/manualSetPhotoADFactor/{turn}")
-	public boolean manualSetPhotoADFactor(@PathVariable("turn") byte[] turn) throws Exception {
+	@PostMapping("/manualSetPhotoADFactor")
+	public boolean manualSetPhotoADFactor(@RequestBody byte[] turn) throws Exception {
 		System.out.println("进入ManualSetPhotoADFactor");
 		boolean ret = false;
 		try {
@@ -269,6 +273,22 @@ public class ADBoardController extends baseController{
 			while(true){
 				state=api.getAdStatus(head.getBoardID(),head);
 				if(state!=null){
+					byte[] newstate=new byte[4];
+					for(int i=0;i<6;i++){
+						if(i==0||i==3||i==4){
+							newVal.add(state[i]);
+						}else{
+							int ste=0;
+							if(i==1){
+								System.arraycopy(state, 1, newstate, 0, 2);
+								ste=(int)((newstate[0])|(newstate[1])<<8);
+							}else if(i==5){
+								System.arraycopy(state, 6, newstate, 0, 2);
+								ste=getInt(newstate);
+							}
+							newVal.add(ste);
+						}
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取AD测试参数超时！");
@@ -276,30 +296,15 @@ public class ADBoardController extends baseController{
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[4];
-			for(int i=0;i<6;i++){
-				if(i==0||i==3||i==4){
-					newVal.add(state[i]);
-				}else{
-					int ste=0;
-					if(i==1){
-						System.arraycopy(state, 1, newstate, 0, 2);
-						ste=(int)((newstate[0])|(newstate[1])<<8);
-					}else if(i==5){
-						System.arraycopy(state, 6, newstate, 0, 2);
-						ste=getInt(newstate);
-					}
-					newVal.add(ste);
-				}
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
 		return new ResponseVO(newVal);
 	}
 	/**
-	 * 设置AD测试参数和通采参数
-	 * getTestType 1-测试；2-通采；
+	 * 设置AD测试参数
+	 * getTestType 1-测试
 	 * @return
 	 * @throws Exception
 	 */
@@ -330,6 +335,32 @@ public class ADBoardController extends baseController{
 		return ret;
 	}
 	/**
+	 * 设置AD通采参数
+	 * getTestType 2-通采；
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping("/SetADPara1")
+	public boolean SetADPara1(@PathVariable("turn") DeviceDebugADPara_Tongcai_Setting turn) throws Exception {
+		System.out.println("进入SetADPara1");
+		boolean ret = false;
+		try {
+			byte[] dataIn = new byte[4];
+			dataIn[0] = (byte) (turn.getTestType() & 0xff);
+			dataIn[1] = (byte) (turn.getCollectCount() & 0xff);
+			dataIn[2] = (byte) ((turn.getCollectCount()>>8) & 0xff);
+			dataIn[3] = (byte) (turn.getUploadCount() & 0xff);
+			dataIn[4] = (byte) ((turn.getUploadCount()>>8) & 0xff);
+			dataIn[5] = (byte) (turn.getInterval() & 0xff);
+			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
+				head.setCommand((int)DeviceDebugCommandAD.SetADPara1.getId());
+			ret=sendReaction(dataIn,head);
+		} catch (Exception e) {
+			throw new Exception(getErrorstr(e));
+		}
+		return ret;
+	}
+	/**
 	 * 读取AD通采参数(有流程、未完成)
 	 * @return
 	 * @throws Exception
@@ -350,27 +381,28 @@ public class ADBoardController extends baseController{
 			while(true){
 				state=api.getAdStatus(head.getBoardID(),head);
 				if(state!=null){
+					for(int i=0;i<4;i++){
+						byte[] newstate=new byte[2];
+						if(i==0||i==4){
+							newVal.add(state[i]);
+						}else{
+							if(i==1){
+								System.arraycopy(state, 1, newstate, 0, 2);
+							}else if(i==2){
+								System.arraycopy(state, 3, newstate, 0, 2);
+							}
+							int ste=(int)((newstate[0])|(newstate[1])<<8);
+							newVal.add(ste);
+						}
+					}
 					break;
-				}else if(js>5){
+				}else if(js>10){
 					return new ResponseVO(CodeEnum.FAILED,"读取AD通采参数超时！");
 				}
 				js++;
 				Thread.sleep(1500);
 			}
-			byte[] newstate=new byte[2];
-			for(int i=0;i<4;i++){
-				if(i==0||i==4){
-					newVal.add(state[i]);
-				}else{
-					if(i==1){
-						System.arraycopy(state, 1, newstate, 0, 2);
-					}else if(i==2){
-						System.arraycopy(state, 3, newstate, 0, 2);
-					}
-					int ste=(int)((newstate[0])|(newstate[1])<<8);
-					newVal.add(ste);
-				}
-			}
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -397,20 +429,20 @@ public class ADBoardController extends baseController{
 			while(true){
 				state=api.getAdStatus(head.getBoardID(),head);
 				if(state!=null){
+					int j=0;
+					for(int i=0;i<16;i++){
+						byte[] newstate=new byte[4];
+						j=i*2;
+						System.arraycopy(state, j, newstate, 0, 2);
+						int ste=(int)((newstate[0])|(newstate[1])<<8);
+						newVal.add(ste);
+					}
 					break;
 				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"读取AD通采参数超时！");
 				}
 				js++;
 				Thread.sleep(1500);
-			}
-			byte[] newstate=new byte[4];
-			int j=0;
-			for(int i=0;i<16;i++){
-				j=i*2;
-				System.arraycopy(state, j, newstate, 0, 2);
-				int ste=(int)((newstate[0])|(newstate[1])<<8);
-				newVal.add(ste);
 			}
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));

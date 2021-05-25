@@ -1,5 +1,8 @@
 package com.quaero.qbcTest.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +14,7 @@ import com.quaero.qbcTest.Enum.DeviceCommand;
 import com.quaero.qbcTest.Enum.DeviceDebugCommandReact;
 import com.quaero.qbcTest.Enum.DeviceDebugCommandStir;
 import com.quaero.qbcTest.dto.DeviceDebugPackageHead;
+import com.quaero.qbcTest.dto.MessageCode.CodeEnum;
 import com.quaero.qbcTest.dto.MessageCode.ResponseVO;
 import com.quaero.qbcTest.server.QbcTestApi;
 import com.quaero.qbcTest.server.impl.StirApiImpl;
@@ -52,7 +56,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir1LiftingStep/{turn}/{coord}")
-	public boolean stir1LiftingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	public ResponseVO stir1LiftingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入Stir1LiftingStep");
 		boolean ret = false;
 		try {
@@ -67,7 +71,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌1升降归零
@@ -75,7 +79,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir1LiftingZero")
-	public boolean stir1LiftingZero() throws Exception {
+	public ResponseVO stir1LiftingZero() throws Exception {
 		System.out.println("进入Stir1LiftingZero");
 		boolean ret = false;
 		try {
@@ -87,7 +91,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌1摆动运行步数
@@ -97,7 +101,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/Stir1SwingStep/{turn}/{coord}")
-	public boolean Stir1SwingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	public ResponseVO Stir1SwingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入Stir1SwingStep");
 		boolean ret = false;
 		try {
@@ -112,7 +116,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌1摆动归零
@@ -120,7 +124,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir1SwingZero")
-	public boolean stir1SwingZero() throws Exception {
+	public ResponseVO stir1SwingZero() throws Exception {
 		System.out.println("进入Stir1SwingZero");
 		boolean ret = false;
 		try {
@@ -132,7 +136,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌2升降运行步数
@@ -142,7 +146,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir2LiftingStep/{turn}/{coord}")
-	public boolean stir2LiftingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	public ResponseVO stir2LiftingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入Stir1LiftingStep");
 		boolean ret = false;
 		try {
@@ -157,7 +161,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌2升降归零
@@ -165,7 +169,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir2LiftingZero")
-	public boolean stir2LiftingZero() throws Exception {
+	public ResponseVO stir2LiftingZero() throws Exception {
 		System.out.println("进入Stir1LiftingZero");
 		boolean ret = false;
 		try {
@@ -177,7 +181,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌2摆动运行步数
@@ -187,7 +191,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/Stir2SwingStep/{turn}/{coord}")
-	public boolean Stir2SwingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	public ResponseVO Stir2SwingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入Stir1SwingStep");
 		boolean ret = false;
 		try {
@@ -202,7 +206,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌2摆动归零
@@ -210,7 +214,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir2SwingZero")
-	public boolean stir2SwingZero() throws Exception {
+	public ResponseVO stir2SwingZero() throws Exception {
 		System.out.println("进入Stir2SwingZero");
 		boolean ret = false;
 		try {
@@ -222,7 +226,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌1摆1位置
@@ -230,7 +234,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir1SwingPosition1")
-	public boolean stir1SwingPosition1() throws Exception {
+	public ResponseVO stir1SwingPosition1() throws Exception {
 		System.out.println("进入Stir1SwingPosition1");
 		boolean ret = false;
 		try {
@@ -242,7 +246,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌1摆4位置
@@ -250,7 +254,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir1SwingPosition4")
-	public boolean stir1SwingPosition4() throws Exception {
+	public ResponseVO stir1SwingPosition4() throws Exception {
 		System.out.println("进入stir1SwingPosition4");
 		boolean ret = false;
 		try {
@@ -262,7 +266,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌2摆2位置
@@ -270,7 +274,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/Stir2SwingPosition2")
-	public boolean Stir2SwingPosition2() throws Exception {
+	public ResponseVO Stir2SwingPosition2() throws Exception {
 		System.out.println("进入Stir2SwingPosition2");
 		boolean ret = false;
 		try {
@@ -282,7 +286,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌2摆3位置
@@ -290,7 +294,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stir2SwingPosition3")
-	public boolean stir2SwingPosition3() throws Exception {
+	public ResponseVO stir2SwingPosition3() throws Exception {
 		System.out.println("进入Stir2SwingPosition3");
 		boolean ret = false;
 		try {
@@ -303,7 +307,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 获取光耦状态
@@ -314,18 +318,33 @@ public class StirController  extends baseController{
 	public ResponseVO stirGetOptoStatus() throws Exception {
 		System.out.println("进入stirGetOptoStatus");
 		byte[] state=null;
+		List newVal=new ArrayList<>();
+		List<Byte> aa=new ArrayList<>();
 		try {
 			byte[] dataIn = new byte[4];
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setBoardID((byte)DeviceBoardID.Stir.getValue());
 			head.setCommand((int)DeviceDebugCommandStir.StirGetOptoStatus.getId());
 			boolean ret=sendReaction(dataIn,head);
-			Thread.sleep(1500);
-			state=api.getOptoStatus(head.getBoardID(),head);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					for(byte s:state){
+						aa.add(s);
+					}
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"获取光耦状态超时！");
+				}
+				js++;
+				Thread.sleep(1500);
+			}
+			//state=api.getOptoStatus(head.getBoardID(),head);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return new ResponseVO(state);
+		return new ResponseVO(aa);
 	}
 	/**
 	 * 清洗电磁阀
@@ -334,7 +353,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/eletValueWash/{turn}")
-	public boolean eletValueWash(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO eletValueWash(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入EletValueWash");
 		boolean ret = false;
 		try {
@@ -347,7 +366,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌电机1
@@ -356,7 +375,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/electricMotorStr1/{turn}")
-	public boolean electricMotorStr1(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO electricMotorStr1(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入ElectricMotorStr1");
 		boolean ret = false;
 		try {
@@ -369,7 +388,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 搅拌电机2
@@ -378,7 +397,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/electricMotorStr2/{turn}")
-	public boolean electricMotorStr2(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO electricMotorStr2(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入ElectricMotorStr2");
 		boolean ret = false;
 		try {
@@ -391,7 +410,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * Mix
@@ -400,7 +419,7 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/stirMix/{turn}")
-	public boolean stirMix(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO stirMix(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入StirMix");
 		boolean ret = false;
 		try {
@@ -413,7 +432,7 @@ public class StirController  extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * Trig1
@@ -422,20 +441,20 @@ public class StirController  extends baseController{
 	 * @throws Exception
 	 */
 	@GetMapping("/StirTrig/{turn}")
-	public boolean StirTrig(@PathVariable("turn") int turn) throws Exception {
+	public ResponseVO StirTrig(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入StirMix");
 		boolean ret = false;
 		try {
 			byte[] dataIn = new byte[4];
-			dataIn[0] = (byte) (turn & 0xff);
+			//dataIn[0] = (byte) (turn & 0xff);
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setBoardID((byte)DeviceBoardID.Stir.getValue());
-			head.setCommand((int)DeviceDebugCommandStir.StirTrig.getId());
+			head.setCommand((int)DeviceDebugCommandStir.StirTrig.getId()+turn);
 			ret=sendReaction(dataIn,head);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 
 

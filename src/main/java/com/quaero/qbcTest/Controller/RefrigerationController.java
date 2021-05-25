@@ -236,6 +236,7 @@ public class RefrigerationController extends baseController {
 		head.setCommand((int) DeviceDebugCommandRefrigeration.RefrigerationStop.getId());
 		ret = sendReaction(dataIn, head);
 
+		
 		return sendSuccess(ret);
 	}
 

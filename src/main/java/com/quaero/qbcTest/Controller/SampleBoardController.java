@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +18,10 @@ import com.quaero.qbcTest.Enum.DeviceDebugCommandStir;
 import com.quaero.qbcTest.dto.DeviceDebugPackageHead;
 import com.quaero.qbcTest.dto.MessageCode.CodeEnum;
 import com.quaero.qbcTest.dto.MessageCode.ResponseVO;
+import com.quaero.qbcTest.dto.entity.SampleBoardCompensationPara;
 import com.quaero.qbcTest.server.QbcTestApi;
 import com.quaero.qbcTest.util.Best;
+import com.quaero.qbcTest.util.ByteUtil;
 
 import cn.hutool.core.util.ArrayUtil;
 /**
@@ -55,8 +59,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeLiftingStep/{turn}/{coord}")
-	public boolean sampleProbeLiftingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	@PostMapping("/sampleProbeLiftingStep/{turn}/{coord}")
+	public ResponseVO sampleProbeLiftingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入SampleProbeLiftingStep");
 		boolean ret = false;
 		try {
@@ -70,15 +74,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 探针升降归零
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeLiftingZero")
-	public boolean sampleProbeLiftingZero() throws Exception {
+	@PostMapping("/sampleProbeLiftingZero")
+	public ResponseVO sampleProbeLiftingZero() throws Exception {
 		System.out.println("进入SampleProbeLiftingZero");
 		boolean ret = false;
 		try {
@@ -89,7 +93,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 探针摆动运行步数
@@ -98,8 +102,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingStep/{turn}/{coord}")
-	public boolean sampleProbeSwingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	@PostMapping("/sampleProbeSwingStep/{turn}/{coord}")
+	public ResponseVO sampleProbeSwingStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入sampleProbeSwingStep");
 		boolean ret = false;
 		try {
@@ -113,15 +117,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 探针摆动归零
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingZero")
-	public boolean sampleProbeSwingZero() throws Exception {
+	@PostMapping("/sampleProbeSwingZero")
+	public ResponseVO sampleProbeSwingZero() throws Exception {
 		System.out.println("进入sampleProbeSwingZero");
 		boolean ret = false;
 		try {
@@ -132,15 +136,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆加样
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingSamplingPosition")
-	public boolean sampleProbeSwingSamplingPosition() throws Exception {
+	@PostMapping("/sampleProbeSwingSamplingPosition")
+	public ResponseVO sampleProbeSwingSamplingPosition() throws Exception {
 		System.out.println("进入SampleProbeSwingSamplingPosition");
 		boolean ret = false;
 		try {
@@ -151,15 +155,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆质控盘外圈
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingDiskOut")
-	public boolean sampleProbeSwingDiskOut() throws Exception {
+	@PostMapping("/sampleProbeSwingDiskOut")
+	public ResponseVO sampleProbeSwingDiskOut() throws Exception {
 		System.out.println("进入SampleProbeSwingDiskOut");
 		boolean ret = false;
 		try {
@@ -170,15 +174,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆质控盘内圈
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingDiskIn")
-	public boolean sampleProbeSwingDiskIn() throws Exception {
+	@PostMapping("/sampleProbeSwingDiskIn")
+	public ResponseVO sampleProbeSwingDiskIn() throws Exception {
 		System.out.println("进入SampleProbeSwingDiskIn");
 		boolean ret = false;
 		try {
@@ -189,15 +193,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆质控盘清洗
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingDiskWashPosition")
-	public boolean sampleProbeSwingDiskWashPosition() throws Exception {
+	@PostMapping("/sampleProbeSwingDiskWashPosition")
+	public ResponseVO sampleProbeSwingDiskWashPosition() throws Exception {
 		System.out.println("进入SampleProbeSwingDiskWashPosition");
 		boolean ret = false;
 		try {
@@ -208,15 +212,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆轨道清洗
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingTrackWashPosition")
-	public boolean sampleProbeSwingTrackWashPosition() throws Exception {
+	@PostMapping("/sampleProbeSwingTrackWashPosition")
+	public ResponseVO sampleProbeSwingTrackWashPosition() throws Exception {
 		System.out.println("进入sampleProbeSwingTrackWashPosition");
 		boolean ret = false;
 		try {
@@ -227,15 +231,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆轨道1
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingTrack1")
-	public boolean sampleProbeSwingTrack1() throws Exception {
+	@PostMapping("/sampleProbeSwingTrack1")
+	public ResponseVO sampleProbeSwingTrack1() throws Exception {
 		System.out.println("进入sampleProbeSwingTrack1");
 		boolean ret = false;
 		try {
@@ -246,15 +250,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *摆轨道2
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSwingTrack2")
-	public boolean sampleProbeSwingTrack2() throws Exception {
+	@PostMapping("/sampleProbeSwingTrack2")
+	public ResponseVO sampleProbeSwingTrack2() throws Exception {
 		System.out.println("进入sampleProbeSwingTrack2");
 		boolean ret = false;
 		try {
@@ -265,7 +269,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 探针加样本动作
@@ -275,8 +279,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSamplingAction/{turn}/{sampleIndex}/{sampleCap}")
-	public boolean sampleProbeSamplingAction(@PathVariable("turn") int turn,@PathVariable("sampleIndex") int sampleIndex,@PathVariable("sampleCap") float sampleCap) throws Exception {
+	@PostMapping("/sampleProbeSamplingAction/{turn}/{sampleIndex}/{sampleCap}")
+	public ResponseVO sampleProbeSamplingAction(@PathVariable("turn") int turn,@PathVariable("sampleIndex") int sampleIndex,@PathVariable("sampleCap") float sampleCap) throws Exception {
 		System.out.println("进入sampleProbeSamplingAction");
 		boolean ret = false;
 		try {
@@ -293,7 +297,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 质控盘运行步数
@@ -302,8 +306,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleDiskTurnStep/{turn}/{coord}")
-	public boolean sampleDiskTurnStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	@PostMapping("/sampleDiskTurnStep/{turn}/{coord}")
+	public ResponseVO sampleDiskTurnStep(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入SampleDiskTurnStep");
 		boolean ret = false;
 		try {
@@ -317,15 +321,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *质控盘归零
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleDiskZero")
-	public boolean sampleDiskZero() throws Exception {
+	@PostMapping("/sampleDiskZero")
+	public ResponseVO sampleDiskZero() throws Exception {
 		System.out.println("进入sampleDiskZero");
 		boolean ret = false;
 		try {
@@ -336,7 +340,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 质控盘外圈转动个数
@@ -345,8 +349,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleDiskOutTurnCount/{turn}/{count}")
-	public boolean sampleDiskOutTurnCount(@PathVariable("turn") int turn,@PathVariable("count") int count) throws Exception {
+	@PostMapping("/sampleDiskOutTurnCount/{turn}/{count}")
+	public ResponseVO sampleDiskOutTurnCount(@PathVariable("turn") int turn,@PathVariable("count") int count) throws Exception {
 		System.out.println("进入SampleDiskOutTurnCount");
 		boolean ret = false;
 		try {
@@ -359,7 +363,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 质控盘内圈转动个数
@@ -368,8 +372,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleDiskInTurnCount/{turn}/{count}")
-	public boolean sampleDiskInTurnCount(@PathVariable("turn") int turn,@PathVariable("count") int count) throws Exception {
+	@PostMapping("/sampleDiskInTurnCount/{turn}/{count}")
+	public ResponseVO sampleDiskInTurnCount(@PathVariable("turn") int turn,@PathVariable("count") int count) throws Exception {
 		System.out.println("进入SampleDiskInTurnCount");
 		boolean ret = false;
 		try {
@@ -382,7 +386,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 注射泵运行ul数
@@ -391,8 +395,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleInjectionPumpSuck/{turn}/{coord}")
-	public boolean sampleInjectionPumpSuck(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
+	@PostMapping("/sampleInjectionPumpSuck/{turn}/{coord}")
+	public ResponseVO sampleInjectionPumpSuck(@PathVariable("turn") int turn,@PathVariable("coord") int coord) throws Exception {
 		System.out.println("进入SampleInjectionPumpSuck");
 		boolean ret = false;
 		try {
@@ -405,15 +409,15 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *注射泵归零
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleInjectionPumpZero")
-	public boolean sampleInjectionPumpZero() throws Exception {
+	@PostMapping("/sampleInjectionPumpZero")
+	public ResponseVO sampleInjectionPumpZero() throws Exception {
 		System.out.println("进入SampleInjectionPumpZero");
 		boolean ret = false;
 		try {
@@ -424,46 +428,42 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
 	 * 写入补偿步数(未测试)
-	 * clean 0x02	加样到质控清洗
-	 * clean1 0x02 质控清洗到质控盘外
-	 * clean2 0x02质控清洗到质控盘内
-	 * clean3 0x02加样到轨道清洗
-	 * clean4 0x02轨道清洗到轨道1
-	 * clean5 0x02轨道清洗到轨道2
+	 * samp 
+	 * 加样到质控清洗\质控清洗到质控盘外\质控清洗到质控盘内
+	 * 加样到轨道清洗\轨道清洗到轨道1\ 轨道清洗到轨道2
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/setPara/{clean}/{clean1}/{clean2}/{clean3}/{clean4}/{clean5}")
-	public boolean setPara(@PathVariable("clean") int clean,@PathVariable("clean1") int clean1,@PathVariable("clean2") int clean2,
-			@PathVariable("clean3") int clean3,@PathVariable("clean4") int clean4,@PathVariable("clean5") int clean5) throws Exception {
+	@PostMapping("/setPara")
+	public ResponseVO setPara(@RequestBody SampleBoardCompensationPara samp) throws Exception {
 		System.out.println("进入SetPara");
 		boolean ret = false;
 		try {
 			byte[] dataIn = new byte[12];
-			dataIn[0] = (byte) (clean & 0xff);
-			dataIn[1] = (byte) (clean >>8 & 0xff);
-			dataIn[2] = (byte) (clean1 & 0xff);
-			dataIn[3] = (byte) (clean1 >>8 & 0xff);
-			dataIn[4] = (byte) (clean2 & 0xff);
-			dataIn[5] = (byte) (clean2 >>8 & 0xff);
-			dataIn[6] = (byte) (clean3 & 0xff);
-			dataIn[7] = (byte) (clean3 >>8 & 0xff);
-			dataIn[8] = (byte) (clean4 & 0xff);
-			dataIn[9] = (byte) (clean4 >>8 & 0xff);
-			dataIn[10] = (byte) (clean5 & 0xff);
-			dataIn[11] = (byte) (clean5 >>8 & 0xff);
+			dataIn[0] = (byte) (samp.getAddSampleToDiskWash() & 0xff);
+			dataIn[1] = (byte) (samp.getAddSampleToDiskWash() >>8 & 0xff);
+			dataIn[2] = (byte) (samp.getDiskWashToDiskOuter() & 0xff);
+			dataIn[3] = (byte) ((samp.getDiskWashToDiskOuter()>>8) & 0xff);
+			dataIn[4] = (byte) (samp.getDiskWashToDiskInner() & 0xff);
+			dataIn[5] = (byte) ((samp.getDiskWashToDiskInner())>>8 & 0xff);
+			dataIn[6] = (byte) (samp.getAddSampleToDiskWash() & 0xff);
+			dataIn[7] = (byte) ((samp.getAddSampleToDiskWash()) >>8 & 0xff);
+			dataIn[8] = (byte) (samp.getTrackWashToTrack1() & 0xff);
+			dataIn[9] = (byte) ((samp.getTrackWashToTrack1()) >>8 & 0xff);
+			dataIn[10] = (byte) (samp.getTrackWashToTrack2() & 0xff);
+			dataIn[11] = (byte) ((samp.getTrackWashToTrack2()) >>8 & 0xff);
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandSample.SetPara.getId());
 			ret=sendReaction(dataIn,head);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 *读取补偿步数
@@ -484,11 +484,11 @@ public class SampleBoardController extends baseController{
 			Thread.sleep(1500);
 			head.setBoardID((byte)DeviceBoardID.Sample.getValue());
 			state=api.getOptoStatus(head.getBoardID(),head);
-			byte[] newstate=new byte[4];
 			for(int i=0;i<6;i++){
+				byte[] newstate=new byte[4];
 				int j=i*2;
 				System.arraycopy(state, j, newstate, 0, 2);
-				int ste=(int)((newstate[0])|(newstate[1])<<8);
+				int ste=ByteUtil.getInt(newstate);
 				newVal.add(ste);
 			}
 		} catch (Exception e) {
@@ -506,18 +506,30 @@ public class SampleBoardController extends baseController{
 		System.out.println("进入SampleGetOptoStatus");
 		byte[] state=null;
 		boolean ret = false;
+		List<Byte> aa=new ArrayList<>();
 		try {
 			byte[] dataIn = new byte[4];
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandSample.SampleGetOptoStatus.getId());
 			ret=sendReaction(dataIn,head);
-			Thread.sleep(1500);
-			head.setBoardID((byte)DeviceBoardID.Sample.getValue());
-			state=api.getOptoStatus(head.getBoardID(),head);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					for(byte s:state){
+						aa.add(s);
+					}
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"获取光耦状态超时！");
+				}
+				js++;
+				Thread.sleep(1500);
+			}
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return new ResponseVO(state);
+		return new ResponseVO(aa);
 	}
 	
 	/**
@@ -526,8 +538,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/eletValueWashInner/{turn}")
-	public boolean eletValueWashInner(@PathVariable("turn") int turn) throws Exception {
+	@PostMapping("/eletValueWashInner/{turn}")
+	public ResponseVO eletValueWashInner(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入EletValueWashInner");
 		boolean ret = false;
 		try {
@@ -539,7 +551,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 外壁清洗
@@ -547,8 +559,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/eletValueWashOuter/{turn}")
-	public boolean eletValueWashOuter(@PathVariable("turn") int turn) throws Exception {
+	@PostMapping("/eletValueWashOuter/{turn}")
+	public ResponseVO eletValueWashOuter(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入EletValueWashOuter");
 		boolean ret = false;
 		try {
@@ -560,7 +572,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 条码长度设置(未测试)
@@ -568,8 +580,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/setBarcodeLength/{turn}")
-	public boolean setBarcodeLength(@PathVariable("turn") int turn) throws Exception {
+	@PostMapping("/setBarcodeLength/{turn}")
+	public ResponseVO setBarcodeLength(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SetBarcodeLength");
 		boolean ret = false;
 		try {
@@ -581,7 +593,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 条码长度读取
@@ -605,7 +617,10 @@ public class SampleBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
-					lencount=(int)state[0];
+					byte[] newstate=new byte[4];
+					System.arraycopy(state, 0, newstate, 0, 1);
+					lencount=ByteUtil.getInt(newstate);
+					//lencount=(int)state[0];
 					break;
 				}else if(js>100){
 					return new ResponseVO(CodeEnum.FAILED,"条码长度读取超时！");
@@ -629,6 +644,7 @@ public class SampleBoardController extends baseController{
 		System.out.println("进入CheckReader");
 		boolean ret = false;
 		byte[] state=null;
+		List<Byte> aa=new ArrayList<>();
 		try {
 			byte[] dataIn = new byte[4];
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
@@ -639,6 +655,9 @@ public class SampleBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
+					for(byte s:state){
+						aa.add(s);
+					}
 					break;
 				}else if(js>1000){
 					return new ResponseVO(CodeEnum.FAILED,"条码阅读器检查获取超时！");
@@ -648,7 +667,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return new ResponseVO(state);
+		return new ResponseVO(aa);
 	}
 	/**
 	 * 扫描失败重复次数设置
@@ -656,8 +675,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/setRecheckCount/{turn}")
-	public boolean setRecheckCount(@PathVariable("turn") int turn) throws Exception {
+	@PostMapping("/setRecheckCount/{turn}")
+	public ResponseVO setRecheckCount(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SetRecheckCount");
 		boolean ret = false;
 		try {
@@ -669,7 +688,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
@@ -693,11 +712,15 @@ public class SampleBoardController extends baseController{
 			while(true){
 				state=api.getOptoStatus(head.getBoardID(),head);
 				if(state!=null){
-					lencount=(int)state[0];
+					byte[] newstate=new byte[4];
+					System.arraycopy(state, 0, newstate, 0, 1);
+					lencount=ByteUtil.getInt(newstate);
+					//lencount=(int)state[0];
 					break;
-				}else if(js>1000){
+				}else if(js>5){
 					return new ResponseVO(CodeEnum.FAILED,"扫描失败重复次数读取超时！");
 				}
+				Thread.sleep(1500);
 				js++;
 			}
 		} catch (Exception e) {
@@ -710,8 +733,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/moveToWash")
-	public boolean moveToWash() throws Exception {
+	@PostMapping("/moveToWash")
+	public ResponseVO moveToWash() throws Exception {
 		System.out.println("进入MoveToWash");
 		boolean ret = false;
 		try {
@@ -722,17 +745,16 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
 	 * 探针精度测试加样
-	 * turn 0x01	重复次数
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeTest")
-	public boolean sampleProbeTest() throws Exception {
+	@PostMapping("/sampleProbeTest")
+	public ResponseVO sampleProbeTest() throws Exception {
 		System.out.println("进入SampleProbeTest");
 		boolean ret = false;
 		try {
@@ -743,7 +765,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	
 	/**
@@ -754,8 +776,8 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeCompensateWrite/{volume}/{volume1}/{volume2}")
-	public boolean sampleProbeCompensateWrite(@PathVariable("volume") float volume,@PathVariable("volume1") float volume1,@PathVariable("volume2") float volume2) throws Exception {
+	@PostMapping("/sampleProbeCompensateWrite/{volume}/{volume1}/{volume2}")
+	public ResponseVO sampleProbeCompensateWrite(@PathVariable("volume") float volume,@PathVariable("volume1") float volume1,@PathVariable("volume2") float volume2) throws Exception {
 		System.out.println("进入SampleProbeCompensateWrite");
 		boolean ret = false;
 		try {
@@ -778,7 +800,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 读取探针加样精度补偿液量
@@ -796,15 +818,24 @@ public class SampleBoardController extends baseController{
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandSample.SampleProbeCompensateRead.getId());
 			ret=sendReaction(dataIn,head);
-			Thread.sleep(1500);
-			head.setBoardID((byte)DeviceBoardID.Sample.getValue());
-			state=api.getOptoStatus(head.getBoardID(),head);
-			byte[] newstate=new byte[4];
-			for(int i=0;i<3;i++){
-				int j=i*4;
-				System.arraycopy(state, j, newstate, 0, 4);
-				int ste=(int)((newstate[0])|(newstate[1])<<8|(newstate[2])<<16|(newstate[3])<<24);
-				newVal.add(ste);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					for(int i=0;i<3;i++){
+						byte[] newstate=new byte[4];
+						int j=i*4;
+						System.arraycopy(state, j, newstate, 0, 4);
+						int ste=ByteUtil.getInt(newstate);
+						//int ste=(int)((newstate[0])|(newstate[1])<<8|(newstate[2])<<16|(newstate[3])<<24);
+						newVal.add(ste);
+					}
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"读取探针加样精度补偿液量超时！");
+				}
+				Thread.sleep(1500);
+				js++;
 			}
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -817,7 +848,7 @@ public class SampleBoardController extends baseController{
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/sampleProbeSurfaceMonitor/{turn}")
+	@PostMapping("/sampleProbeSurfaceMonitor/{turn}")
 	public ResponseVO sampleProbeSurfaceMonitor(@PathVariable("turn") int turn) throws Exception {
 		System.out.println("进入SampleProbeSurfaceMonitor");
 		boolean ret = false;
@@ -831,10 +862,25 @@ public class SampleBoardController extends baseController{
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandSample.SampleProbeSurfaceMonitor.getId());
 			ret=sendReaction(dataIn,head);
-			Thread.sleep(10000);
-			head.setBoardID((byte)DeviceBoardID.Sample.getValue());
-			state=api.getOptoStatus(head.getBoardID(),head);
-			ste=(int)((state[0])|(state[1])<<8);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					for(int i=0;i<3;i++){
+						byte[] newstate=new byte[4];
+						System.arraycopy(state, 0, newstate, 0, 2);
+						ste=ByteUtil.getInt(newstate);
+						//int ste=(int)((newstate[0])|(newstate[1])<<8|(newstate[2])<<16|(newstate[3])<<24);
+						//newVal.add(ste);
+					}
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"液面监控超时！");
+				}
+				Thread.sleep(1500);
+				js++;
+			}
+			//ste=(int)((state[0])|(state[1])<<8);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -843,17 +889,20 @@ public class SampleBoardController extends baseController{
 	/**
 	 * 条码距窗口补偿步数设置
 	 * turn 0x02	外圈补偿步数（-450到450）
+	 * turn1 0x02	内圈补偿步数（-450到450）
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/barcodecompensateWrite/{turn}")
-	public boolean barcodecompensateWrite(@PathVariable("turn") int turn) throws Exception {
+	@PostMapping("/barcodecompensateWrite/{turn}/{turn1}")
+	public ResponseVO barcodecompensateWrite(@PathVariable("turn") int turn,@PathVariable("turn1") int turn1) throws Exception {
 		System.out.println("进入BarcodecompensateWrite");
 		boolean ret = false;
 		try {
 			byte[] dataIn = new byte[4];
 			dataIn[0] = (byte) (turn & 0xff);
-			dataIn[1] = (byte) (turn>>8 & 0xff);
+			dataIn[1] = (byte) ((turn>>8) & 0xff);
+			dataIn[2] = (byte) (turn1 & 0xff);
+			dataIn[3] = (byte) ((turn1>>8) & 0xff);
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandSample.BarcodecompensateWrite.getId());
 			ret=sendReaction(dataIn,head);
@@ -861,7 +910,7 @@ public class SampleBoardController extends baseController{
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
-		return ret;
+		return sendSuccess(ret);
 	}
 	/**
 	 * 条码距窗口补偿步数读取
@@ -879,7 +928,28 @@ public class SampleBoardController extends baseController{
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandSample.BarcodecompensateRead.getId());
 			ret=sendReaction(dataIn,head);
-			Thread.sleep(1500);
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					for(int i=0;i<2;i++){
+						byte[] newstate=new byte[4];
+						System.arraycopy(state, 0, newstate, 0, 2);
+						int ste=ByteUtil.getInt(newstate);
+						newVal.add(ste);
+						//int ste=(int)((newstate[0])|(newstate[1])<<8|(newstate[2])<<16|(newstate[3])<<24);
+						//newVal.add(ste);
+					}
+					break;
+				}else if(js>5){
+					return new ResponseVO(CodeEnum.FAILED,"液面监控超时！");
+				}
+				Thread.sleep(1500);
+				js++;
+			}
+			
+			
+			/*Thread.sleep(1500);
 			head.setBoardID((byte)DeviceBoardID.Sample.getValue());
 			state=api.getOptoStatus(head.getBoardID(),head);
 			byte[] newstate=new byte[4];
@@ -888,7 +958,7 @@ public class SampleBoardController extends baseController{
 				System.arraycopy(state, j, newstate, 0, 2);
 				int ste=(int)((newstate[0])|(newstate[1])<<8);
 				newVal.add(ste);
-			}
+			}*/
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}

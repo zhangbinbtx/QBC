@@ -14,7 +14,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
@@ -24,6 +26,8 @@ import com.quaero.qbcTest.Enum.ReaType;
 import com.quaero.qbcTest.base.ErpcModelCallback;
 import com.quaero.qbcTest.base.ErpcModelCallback.EventDllCallImpl;
 import com.quaero.qbcTest.dto.DataPackage;
+import com.quaero.qbcTest.dto.MessageCode.CodeEnum;
+import com.quaero.qbcTest.dto.MessageCode.ResponseVO;
 import com.quaero.qbcTest.dto.entity.DeviceDiskReaMultiPosition;
 import com.quaero.qbcTest.dto.entity.DeviceModuleReaMultiPosition;
 import com.quaero.qbcTest.dto.entity.DeviceReaMultiPosition;
@@ -80,7 +84,7 @@ public class MainboardController extends baseController {
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/init")
+	@PostMapping("/init")
 	public String getInit() throws Exception {
 		System.out.println("进入init");
 		String mess = "";
@@ -128,7 +132,7 @@ public class MainboardController extends baseController {
 		try {
 			byte[] dataIn = new byte[4];
 		    ret = api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.Offline.getStrId(), dataIn);
-		    Thread.sleep(1000);
+		    Thread.sleep(1500);
 		    boolean initstate=api.getState();
 				if (initstate == false) {
 					mess = "脱机成功！";
@@ -182,7 +186,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 模拟测试(可执行)
+	 * 模拟测试(可执行，维护项目老化测试)
 	 * 
 	 * @param index
 	 *            执行次数
@@ -237,7 +241,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 杯空白测试(可执行)
+	 * 杯空白测试(可执行，维护项目杯空白检查)
 	 * 
 	 * @return
 	 * @throws Exception
@@ -256,7 +260,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 光亮检查(可执行)
+	 * 光亮检查(可执行,维护项目杯光亮检查)
 	 * 
 	 * @return
 	 * @throws Exception
@@ -268,6 +272,7 @@ public class MainboardController extends baseController {
 		try {
 			byte[] dataIn = new byte[4];
 			ret = api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.CupLightCheck.getStrId(), dataIn);
+			
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
 		}
@@ -502,7 +507,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 清洗反应杯
+	 * 清洗反应杯 (维护项目)
 	 * 
 	 * @return
 	 * @throws Exception
@@ -765,7 +770,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 清洗恒温槽
+	 * 清洗恒温(孵育)槽 (维护项目)
 	 * 
 	 * @param index
 	 * @return
@@ -777,7 +782,6 @@ public class MainboardController extends baseController {
 		boolean ret = false;
 		try {
 			byte[] dataIn = new byte[4];
-			// dataIn[0]=index;
 			ret = api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.ThermostatWashOut.getStrId(), dataIn);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -786,7 +790,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 样本针清洗
+	 * 样本针清洗 (维护项目)
 	 * 
 	 * @param index
 	 * @return
@@ -819,7 +823,6 @@ public class MainboardController extends baseController {
 		boolean ret = false;
 		try {
 			byte[] dataIn = new byte[4];
-			// dataIn[0]=index;
 			ret = api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.WaterTankWash.getStrId(), dataIn);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -828,7 +831,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 注射泵排气
+	 * 注射泵排气(维护项目)
 	 * 
 	 * @param index
 	 * @return
@@ -872,7 +875,7 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 试剂容量校准
+	 * 试剂容量校准 (维护项目)
 	 * 
 	 * @param index
 	 *            0x01-R1；0x02-R2；0x03-R1+R2；
@@ -1660,19 +1663,26 @@ public class MainboardController extends baseController {
 	}
 
 	/**
-	 * 探针探液老化程序(未完成) 0x01 0x01-样本针老化；0x00-样本针不老化 0x01 0x01-试剂针1老化；0x00-试剂针1不老化
-	 * 0x01 0x01-试剂针2老化；0x00-试剂针2不老化 0x02 探针老化次数
+	 * 探针探液老化程序(未完成，维护项目探针升降检查) 
+	 * sample 1-样本针老化；0-样本针不老化 
+	 * reagent1 1-试剂针1老化；0-试剂针1不老化
+	 * reagent2 1-试剂针2老化；0-试剂针2不老化
+	 * count  探针老化次数
 	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	@GetMapping("/probeDeclineCheck")
-	public boolean probeDeclineCheck() throws Exception {
+	@PostMapping("/probeDeclineCheck/{sample}/{reagent1}/{reagent2}/{count}")
+	public boolean probeDeclineCheck(@PathVariable("sample") int sample,@PathVariable("reagent1") int reagent1,@PathVariable("reagent2") int reagent2,@PathVariable("count") int count) throws Exception {
 		System.out.println("进入ProbeDeclineCheck");
 		boolean ret = false;
 		try {
 			byte[] dataIn = new byte[5];
-			// System.Text.Encoding.Default.GetBytes ( serID );
+			dataIn[0] = (byte) (sample & 0xFF);
+			dataIn[1] = (byte) (reagent1 & 0xFF);
+			dataIn[2] = (byte) (reagent2 & 0xFF);
+			dataIn[0] = (byte) (count & 0xFF);
+			dataIn[1] = (byte) ((count >> 8) & 0xFF);
 			ret = api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.ProbeDeclineCheck.getStrId(), dataIn);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
@@ -1705,5 +1715,23 @@ public class MainboardController extends baseController {
 		}
 		return ret;
 	}
+	/**
+	 * 杯空白测试
+	 * @param index  0维护杯空白 1测试杯空白
+	 * @throws Exception 
+	 */
+	@PostMapping("/cupBlank/{index}")
+   public boolean cupBlank() throws Exception{
+		
+		boolean ret = false;
+		try {
+			byte[] dataIn = new byte[4];
+			ret = api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.CupBlankCheck.getStrId(), dataIn);
+		
+		} catch (Exception e) {
+			throw new Exception(getErrorstr(e));
+		}
+		return ret;
+   }
 
 }

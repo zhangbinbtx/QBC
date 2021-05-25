@@ -1025,24 +1025,45 @@ public class ReagentController  extends baseController{
 			dataIn[1] = (byte) ((depvol) & 0xff);
 			dataIn[2] = (byte) (count & 0xff);
 			if(index==1){
-			  api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.PumpAccuracyReagent1.getStrId(), dataIn);
+			    api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.PumpAccuracyReagent1.getStrId(), dataIn);
 			}else{
 				api.sendToMachine(best.getMachineIP1(), 1, DeviceCommand.PumpAccuracyReagent2.getStrId(), dataIn);
 			}
-
 			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
 			head.setCommand((int)DeviceDebugCommandReagent.ReagentProbeBeready.getId());
-			ret=sendReaction(index,dataIn,head);
+			if(index==1){
+				head.setBoardID((byte)DeviceBoardID.Reagent1.getValue());
+			}else{
+				head.setBoardID((byte)DeviceBoardID.Reagent2.getValue());
+			}
+			int js=0;
+			while(true){
+				state=api.getOptoStatus(head.getBoardID(),head);
+				if(state!=null){
+					byte[] state1=new byte[4];
+					System.arraycopy(state,0,state1,0,2);
+					ste=ByteUtil.getInt(state1);
+					break;
+				}else if(js>20){
+					return new ResponseVO(CodeEnum.FAILED,"探针精度测试加样就绪超时！");
+				}
+				js++;
+				Thread.sleep(1500);
+			}
+
+//			DeviceDebugPackageHead head=new DeviceDebugPackageHead(); 
+//			head.setCommand((int)DeviceDebugCommandReagent.ReagentProbeBeready.getId());
+//			ret=sendReaction(index,dataIn,head);
 			/*if(index==1){
 				head.setBoardID((byte)DeviceBoardID.Reagent1.getValue());
 			}else{
 				head.setBoardID((byte)DeviceBoardID.Reagent2.getValue());
 			}*/
-			int debugHeadSize=head.getClass().getDeclaredFields().length;
-			byte[] bytg=new byte[debugHeadSize];
-			bytg[0] = (byte) (head.getBoardID() & 0xff);
-			bytg[1] = (byte) (head.getCommand() & 0xff);
-			bytg[2] = (byte) ((head.getCommand() >> 8) & 0xFF);
+//			int debugHeadSize=head.getClass().getDeclaredFields().length;
+//			byte[] bytg=new byte[debugHeadSize];
+//			bytg[0] = (byte) (head.getBoardID() & 0xff);
+//			bytg[1] = (byte) (head.getCommand() & 0xff);
+//			bytg[2] = (byte) ((head.getCommand() >> 8) & 0xFF);
 			//ret=sendReaction(index,dataIn,head);
 //			Thread.sleep(1500);
 //			if(index==1){
@@ -1050,7 +1071,7 @@ public class ReagentController  extends baseController{
 //			}else{
 //				head.setBoardID((byte)DeviceBoardID.Reagent2.getValue());
 //			}
-			state=api.getOptoStatus(head.getBoardID(),head);
+//			state=api.getOptoStatus(head.getBoardID(),head);
 //			ste=(int)((state[0])|(state[1])<<8);
 		} catch (Exception e) {
 			throw new Exception(getErrorstr(e));
